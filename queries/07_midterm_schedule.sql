@@ -1,7 +1,9 @@
 SELECT s.SubjectID, s.NameEN, c.MidtermStartDatetime, c.MidtermEndDatetime
-FROM `subject` s, `class` c, `studies` stdy
+FROM `class` c, studies stdy, `subject` s
 WHERE stdy.StudentID = ? AND
       stdy.Year = ? AND
       stdy.Semester = ? AND
-	s.SubjectID = stdy.SubjectID AND
-      s.SubjectID = c.SubjectID ;
+	c.SubjectID = stdy.SubjectID AND
+      c.Year = stdy.Year AND
+      c.Semester = stdy.Semester AND
+      s.SubjectID = c.SubjectID;
