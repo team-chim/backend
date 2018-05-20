@@ -7,6 +7,7 @@ NATURAL JOIN (
 	FROM eng_official_internship EI
 	NATURAL JOIN company C
 	NATURAL JOIN student S
+    GROUP BY StudentID
 ) AS Q
 WHERE S.StudentID = ?
   AND I.Year = ?;
