@@ -67,6 +67,7 @@ router.get('/subjects/:subid/:year/:semester/sections/:sectno/students', require
 router.get('/teachers', require('../controllers/get_teachers'));
 router.put('/teachers', require('../controllers/put_new_teacher'));
 router.get('/teachers/:tid', require('../controllers/get_teacher_details'));
+router.delete('/teachers/:tid', require('../controllers/delete_teacher'));
 router.get('/teachers/:tid/advisees', require('../controllers/get_student_under_advisor'));
 router.get('/teachers/:tid/schedules/teach', require('../controllers/get_teach_schedule'));
 router.get('/teachers/:tid/schedules/teach/:year', require('../controllers/get_teach_schedule'));
