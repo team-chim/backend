@@ -1,9 +1,9 @@
 const request = require('supertest');
 const app = require('../../app');
 
-const STUDENTS = require('../../config/students_mock.js')
-const EXIST_STUDENT = STUDENTS.EXIST_STUDENT;
-const NON_EXIST_STUDENT = STUDENTS.NON_EXIST_STUDENT;
+const MOCK = require('../../config/mock.js')
+const EXIST_STUDENT = MOCK.EXIST_STUDENT;
+const NON_EXIST_STUDENT = MOCK.NON_EXIST_STUDENT;
 
 
 describe('Test the API path - /v2/students/:stuid/fee', () => {

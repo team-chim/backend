@@ -80,7 +80,8 @@ router.get('/faculties/:fid/departments/:depid/head', require('../controllers/ge
 router.get('/faculties/:fid/departments/:depid/teachers', require('../controllers/get_department_teachers'));
 
 /* Faculty Groups */
-
+router.get('/faculty_groups', require('../controllers/get_faculty_groups'));
+router.get('/faculty_groups/:fgid', require('../controllers/get_faculty_groups'));
 
 /* Company & Branch */
 router.get('/companies', require('../controllers/get_companies'));
