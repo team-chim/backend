@@ -29,26 +29,26 @@ module.exports = (req, res) => {
         res.status(422).send({
             "message": "Please specify semester"
         })
-    // } 
-    // if (!newAcademicSemester.Year ||
-    //     !newAcademicSemester.AddingEndDate ||
-    //     !newAcademicSemester.AddingStartDate ||
-    //     !newAcademicSemester.DroppingEndDate ||
-    //     !newAcademicSemester.DroppingStartDate ||
-    //     !newAcademicSemester.RegisterEndDate ||
-    //     !newAcademicSemester.RegisterStartDate ||
-    //     !newAcademicSemester.WithdrawEndDate ||
-    //     !newAcademicSemester.WithdrawStartDate
-    // ) {
-    //     res.status(422).send({
-    //         "message": "Please specify all dates"
-    //     })
+    } 
+    if (!newAcademicSemester.Year ||
+        !newAcademicSemester.AddingEndDate ||
+        !newAcademicSemester.AddingStartDate ||
+        !newAcademicSemester.DroppingEndDate ||
+        !newAcademicSemester.DroppingStartDate ||
+        !newAcademicSemester.RegisterEndDate ||
+        !newAcademicSemester.RegisterStartDate ||
+        !newAcademicSemester.WithdrawEndDate ||
+        !newAcademicSemester.WithdrawStartDate
+    ) {
+        res.status(422).send({
+            "message": "Please specify all dates"
+        })
     } else {
         db.query(SQL.CREATE_NEW_ACADEMIC_SEMESTER, newAcademicSemester, (err, results, fields) => {
             if (err) {
                 if (err.code === 'ER_DUP_ENTRY') {
                     res.status(400).send({
-                        message: "Academic year already exists!"
+                        message: "Academic semester already exists!"
                     });
                 } else {
                     console.log(err);
