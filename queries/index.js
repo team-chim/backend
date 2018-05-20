@@ -76,6 +76,7 @@ module.exports = {
     CREATE_NEW_FACULTY: loadSql('125_insert_new_faculty.sql'),
     CREATE_NEW_FACULTY_GROUP: loadSql('126_insert_new_faculty_group.sql'),
     CREATE_NEW_ACADEMIC_YEAR: loadSql('127_insert_new_academic_year.sql'),
+    CREATE_NEW_ACADEMIC_SEMESTER: loadSql('128_insert_new_academic_semester.sql'),
 
     FIND_TEACH_SCHEDULE : loadSql('70_teach_schedule.sql'),
     FIND_SEMESTER_IN_YEAR: loadSql('71_find_semester_in_year.sql'),
