@@ -16,7 +16,7 @@ module.exports = (req, res) => {
                 res.sendStatus(500);
             } else {
                 if (results.length > 0) {
-                    let official_internship = res.send(results[0]);
+                    let official_internship = results[0];
                     db.query(SQL.FIND_STUDENT_REPORTS, [studentid], (err, reports, fields) => {
                         if (err) {
                             console.log(err);
