@@ -3,18 +3,14 @@ const SQL = require('../queries/index');
 
 module.exports = (req, res) => {
     
-    let studentid = req.params.stuid;
+    let teacherid = req.params.tid;
     let year = req.params.year;
     let semester = req.params.semester;
+    
 
-    // Compatability with APIv1
-    if (!studentid) studentid = req.body.studentid || req.body.StudentID || req.body.StudentId || req.query.studentid || req.query.StudentID || req.query.StudentId;
-    if (!year) year = req.body.year || req.body.Year || req.query.year || req.query.Year;
-    if (!semester) semester = req.body.semester || req.body.Semester || req.query.semester || req.query.Semester;
-
-    if (!studentid) {
+    if (!teacherid) {
         res.status(423).send({
-            "message": "Please specify a student ID"
+            "message": "Please specify a teacher ID"
         })
     } else if (!year) {
         res.status(423).send({
@@ -25,7 +21,7 @@ module.exports = (req, res) => {
             "message": "Please specify a semester"
         })
     } else {
-        db.query(SQL.FIND_FINAL_SCHEDULE, [studentid, year, semester], (err, results, fields) => {
+        db.query(SQL.FIND_TEACH_SCHEDULE, [teacherid, year, semester], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
@@ -34,6 +30,9 @@ module.exports = (req, res) => {
             } else {
                 res.send(results);
             }
-        })  
+        })
+       
     }
+
+
 }

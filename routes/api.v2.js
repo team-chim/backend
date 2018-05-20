@@ -61,7 +61,9 @@ router.get('/teachers', require('../controllers/get_teachers'));
 router.put('/teachers', require('../controllers/put_new_teacher'));
 router.get('/teachers/:tid', require('../controllers/get_teacher_details'));
 router.get('/teachers/:tid/advisees', require('../controllers/get_student_under_advisor'));
-// Add new teacher
+router.get('/teachers/:tid/schedules/teach', require('../controllers/get_teach_schedule'));
+router.get('/teachers/:tid/schedules/teach/:year', require('../controllers/get_teach_schedule'));
+router.get('/teachers/:tid/schedules/teach/:year/:semester', require('../controllers/get_teach_schedule'));
 // Edit Teacher Details
 
 /* Misc. */

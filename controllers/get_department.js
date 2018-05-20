@@ -25,7 +25,7 @@ module.exports = (req, res) => {
                 console.log(err);
                 res.sendStatus(500);
             } else {
-                if (results.length > 1) {
+                if (results.length >= 1) {
                     db.query(SQL.FIND_DEPARTMENT_HEAD, [facultyid, departmentid], (err, dephead, fields) => {
                         if (err) {
                             console.log(err);
