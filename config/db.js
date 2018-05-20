@@ -1,5 +1,5 @@
 module.exports = {
-    host     : 'mysql',
+    host     : 'some-mysql',
     user     : 'admin',
     password : 'password',
     database : 'rexchula',

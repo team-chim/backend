@@ -12,6 +12,7 @@ exports.query = function () {
     pool.getConnection(function (err, conn) {
         if (err) {
             console.log("Database Connection Failed")
+            console.log(err);
             if (eventNameIndex.error) {
                 eventNameIndex.error();
             }

@@ -1,0 +1,4 @@
+module.exports =  {
+    EXIST_STUDENT: '5730123421',
+    NON_EXIST_STUDENT: '5999999999'
+}
