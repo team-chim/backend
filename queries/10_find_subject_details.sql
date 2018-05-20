@@ -1,3 +1,3 @@
-SELECT s.SubjectID, s.NameEN, s.NameTH, s.Credit, s.MidtermStartDatetime, s.MidtermEndDatetime, s.FinalStartDatetime, s.FinalEndDatetime
+SELECT s.SubjectID, s.NameEN, s.NameTH, s.Credit
 FROM `subject` s
 WHERE s.SubjectID = ?;

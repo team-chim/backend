@@ -18,7 +18,7 @@ module.exports = (req, res) => {
         res.status(423).send({
             "message": "Please specify a subject ID"
         })
-    } else if (!sectionid) {
+    } else if (!sectionno) {
         res.status(423).send({
             "message": "Please specify a section ID"
         })
@@ -31,10 +31,12 @@ module.exports = (req, res) => {
             "message": "Please specify a semester"
         })
     } else {
-        db.query(SQL.FIND_STUDENT_IN_SECTION, [subjectid, sectionid, year, semester], (err, results, fields) => {
+        db.query(SQL.FIND_STUDENT_IN_SECTION, [subjectid, sectionno, year, semester], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.sendStatus(404);
             } else {
                 res.send(results);
             }
