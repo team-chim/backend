@@ -7,13 +7,15 @@ module.exports = (req, res) => {
 
     if (!year) {
         res.status(423).send({
-            "message": "Please specify a student ID"
+            "message": "Please specify a year"
         })
     } else {
         db.query(SQL.FIND_INTERNSHIPS_OFFICIAL_YEAR, [year], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.sendStatus(404);
             } else {
                 if (results.length > 0) {
                     res.send(results[0]);
