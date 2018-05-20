@@ -1,11 +1,6 @@
-SELECT I.StudentID, I.`Year`, I.Status, I.StartDate, I.EndDate, I.PositionNameEn, I.PositionNameTH, Q.IsOfficial, C.NameEN, C.NameTH, S.FnameEN, S.MnameEN, S.LnameEN, S.FnameTH, S.MnameTH, S.LnameTH 
-FROM internship I
+SELECT `StudentID`, `FnameEN`, `MnameEN`, `LnameEN`, `FnameTH`, `MnameTH`, `LnameTH`, `Year`, `CompanyID`, C.`NameEN`, C.`NameTH`, `BranchName`, `StartDate`, `EndDate`, `PositionNameEN`, `PositionNameTH`, `Comment`, `Rating`, `OfferID`, `HasOverdueReport`, `Status`
+FROM eng_official_internship
+NATURAL JOIN internship I
 NATURAL JOIN company C
 NATURAL JOIN student S
-NATURAL JOIN (
-	SELECT StudentID, COUNT(*) AS IsOfficial
-	FROM eng_official_internship EI
-	NATURAL JOIN company C
-	NATURAL JOIN student S
-) AS Q
-WHERE S.StudentID = ?;
+WHERE `Year` = ?;
