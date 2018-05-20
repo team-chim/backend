@@ -16,7 +16,16 @@ module.exports = (req, res) => {
                 res.sendStatus(500);
             } else {
                 if (results.length > 0) {
-                    res.send(results[0]);
+                    let official_internship = res.send(results[0]);
+                    db.query(SQL.FIND_STUDENT_REPORTS, [studentid], (err, reports, fields) => {
+                        if (err) {
+                            console.log(err);
+                            res.sendStatus(500);
+                        } else {
+                            official_internship.reports = reports;
+                            res.send(official_internship);
+                        }
+                    })
                 } else {
                     res.sendStatus(404);
                 }

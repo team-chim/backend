@@ -65,6 +65,8 @@ module.exports = {
     FIND_STUDENT_INTERNSHIP_OFFICIAL: loadSql('62_find_student_internships_official.sql'),
     FIND_STUDENT_INTERNSHIPS: loadSql('62_find_student_internships.sql'),
     FIND_STUDENT_INTERNSHIP_YEAR: loadSql('62_find_student_internships_year.sql'),
+    FIND_STUDENT_REPORT: loadSql('62_find_student_report.sql'),
+    FIND_STUDENT_REPORTS: loadSql('62_find_student_reports.sql'),
 
     CREATE_NEW_TEACHER: loadSql('63_insert_new_teacher.sql'),
 
