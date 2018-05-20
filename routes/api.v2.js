@@ -91,6 +91,7 @@ router.get('/faculties/:fid/departments/:depid/teachers', require('../controller
 
 /* Faculty Groups */
 router.get('/faculty_groups', require('../controllers/get_faculty_groups'));
+router.put('/faculty_groups', require('../controllers/put_new_faculty_group'));
 router.get('/faculty_groups/:fgid', require('../controllers/get_faculty_groups'));
 
 /* Company & Branch */

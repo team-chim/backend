@@ -35,7 +35,7 @@ module.exports = (req, res) => {
             if (err) {
                 if (err.code === 'ER_DUP_ENTRY') {
                     res.status(400).send({
-                        message: "Department already exists!"
+                        message: "Faculty already exists!"
                     });
                 } else {
                     console.log(err);
