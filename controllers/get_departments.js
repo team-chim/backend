@@ -18,6 +18,8 @@ module.exports = (req, res) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.sendStatus(404);
             } else {
                 res.send(results);
             }

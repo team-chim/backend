@@ -14,7 +14,7 @@ describe('Get all faculties - /v2/faculties', () => {
     });
 })
 
-describe('Get a specific faculty - /v2//faculties/:fid', () => {
+describe('Get a specific faculty - /v2/faculties/:fid', () => {
     test(`It should response the GET method on exist [fid = ${EXIST_FACULTY}]`, async () => {
         const response = await request(app).get(`/v2/faculties/${EXIST_FACULTY}`);
         expect(response.statusCode).toBe(200);
@@ -33,7 +33,7 @@ describe('Get all faculty groups - /v2/faculty_groups', () => {
     });
 })
 
-describe('Get a specific faculty group - /v2//faculty_groups/:fgid', () => {
+describe('Get a specific faculty group - /v2/faculty_groups/:fgid', () => {
     test(`It should response the GET method on exist [fgid = ${EXIST_FACULTY_GROUP}]`, async () => {
         const response = await request(app).get(`/v2/faculty_groups/${EXIST_FACULTY_GROUP}`);
         expect(response.statusCode).toBe(200);

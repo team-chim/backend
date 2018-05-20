@@ -20,12 +20,14 @@ module.exports = (req, res) => {
         })
     } else {
         // Fetch the subject detail first
-        db.query(SQL.FIND_DEPARTMENT_HEAD, [facultyid, departmentid], (err, dephead, fields) => {
+        db.query(SQL.FIND_DEPARTMENT_HEAD, [facultyid, departmentid], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.sendStatus(404);
             } else {
-                res.send(dephead[0] || null);
+                res.send(results[0] || null);
             }
         })
     }
