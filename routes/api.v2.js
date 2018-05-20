@@ -81,14 +81,18 @@ router.put('/offers', require('../controllers/put_new_offer'));
 
 /* Faculty & Department */
 router.get('/faculties', require('../controllers/get_faculties'));
+router.put('/faculties', require('../controllers/put_new_faculty'));
 router.get('/faculties/:fid', require('../controllers/get_faculty'));
 router.get('/faculties/:fid/departments', require('../controllers/get_departments'));
+router.put('/faculties/:fid/departments', require('../controllers/put_new_department'));
 router.get('/faculties/:fid/departments/:depid', require('../controllers/get_department'));
 router.get('/faculties/:fid/departments/:depid/head', require('../controllers/get_department_head'));
+router.put('/faculties/:fid/departments/:depid/head', require('../controllers/put_new_department_head'));
 router.get('/faculties/:fid/departments/:depid/teachers', require('../controllers/get_department_teachers'));
 
 /* Faculty Groups */
 router.get('/faculty_groups', require('../controllers/get_faculty_groups'));
+router.put('/faculty_groups', require('../controllers/put_new_faculty_group'));
 router.get('/faculty_groups/:fgid', require('../controllers/get_faculty_groups'));
 
 /* Company & Branch */
