@@ -51,6 +51,7 @@ router.put('/students/:stuid/payments', require('../controllers/put_new_payment'
 router.get('/students/:stuid/internships', require('../controllers/get_student_internships'));
 router.put('/students/:stuid/internships', require('../controllers/put_new_internship'));
 router.get('/students/:stuid/internships/:year', require('../controllers/get_student_internships'));
+router.get('/students/:stuid/official_internship', require('../controllers/get_student_official_internship')); 
 
 /* Subject */
 router.get('/subjects', require('../controllers/get_subjects'));
@@ -76,6 +77,7 @@ router.get('/teachers/:tid/schedules/teach/:year/:semester', require('../control
 
 /* Misc. */
 router.get('/students/unpaid', require('../controllers/get_unpaid_students'));
+router.get('/students/official_internships/:year', require('../controllers/get_all_official_internship_year')); 
 router.get('/offers', require('../controllers/get_offers'));
 router.put('/offers', require('../controllers/put_new_offer'));
 
