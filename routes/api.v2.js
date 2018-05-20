@@ -11,8 +11,10 @@ router.get('/test', (req, res) => {
 
 /* Academic Year & Semesters */
 router.get('/academic/years', require('../controllers/get_academic_years'));
+router.put('/academic/years', require('../controllers/put_new_academic_year'));
 router.get('/academic/years/:year', require('../controllers/get_academic_years'));
 router.get('/academic/years/:year/semesters', require('../controllers/get_academic_semesters'));
+router.put('/academic/years/:year/semesters', require('../controllers/put_new_academic_semester'));
 router.get('/academic/years/:year/semesters/:semester', require('../controllers/get_academic_semesters'));
 
 /* Student */
