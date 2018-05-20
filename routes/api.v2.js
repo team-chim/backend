@@ -20,6 +20,7 @@ router.get('/students', require('../controllers/get_students'));
 router.put('/students/undergrad', require('../controllers/put_new_undergrad'));
 router.put('/students/grad', require('../controllers/put_new_grad'));
 router.get('/students/:stuid', require('../controllers/get_student_details'));
+router.delete('/students/:stuid', require('../controllers/delete_student'));
 router.get('/students/:stuid/registered', require('../controllers/get_registered_subjects'));
 router.put('/students/:stuid/registered/register', require('../controllers/register_subject'));
 router.put('/students/:stuid/registered/withdraw', require('../controllers/withdraw_subject'));
