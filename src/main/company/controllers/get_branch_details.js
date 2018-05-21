@@ -2,7 +2,7 @@ const db = require('../../../database')
 const SQL = require('../../../queries/index');
 
 module.exports = (req, res) => {
-
+    
     let companyid = req.params.compid;
     let branchid = req.params.brid;
 

@@ -10,4 +10,4 @@ RUN [ "npm", "install" ]
 
 COPY . .
 EXPOSE 3145
-CMD npm start
+CMD ["npm", "start"]

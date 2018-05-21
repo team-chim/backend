@@ -4,7 +4,7 @@ const SQL = require('../../../queries/index');
 module.exports = (req, res) => {
 
     let companyId = req.params.compid;
-
+    
     // Must match DB
     let newBranch = {
         CompanyID: companyId,
