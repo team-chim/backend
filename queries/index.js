@@ -87,4 +87,7 @@ module.exports = {
     FIND_TEACH_SCHEDULE : loadSql('70_teach_schedule.sql'),
     FIND_SEMESTER_IN_YEAR: loadSql('71_find_semester_in_year.sql'),
     FIND_SEMESTER: loadSql('71_find_semester.sql'),
+    FIND_MOST_RECENT_MANAGE: loadSql('72_find_most_recent_manage.sql'),
+    
+    DELETE_MANAGEMENTSHIP: loadSql('200_delete_managementship.sql'),
 }

@@ -39,17 +39,8 @@ module.exports =  {
         majorDepartment: 2,
     },
 
-    // Teachers
-    EXIST_TEACHER: '0000034157',
-    NON_EXIST_TEACHER: '1133557799',
 
-    // Faculties
-    EXIST_FACULTY: 21,
-    NON_EXIST_FACULTY: 99,
-    EXIST_FACULTY_GROUP: 1,
-    NON_EXIST_FACULTY_GROUP: 9,
-
-    // Methods
+    // Student Methods
     resetStudentTable: function(done) {
         db.query('DELETE FROM rexchula.`student` WHERE StudentID = ?;', this.NON_EXIST_STUDENT, (err, results, fields) => {
             if (err) {
@@ -78,4 +69,16 @@ module.exports =  {
             });
         });
     },
+
+
+    // Teachers
+    EXIST_TEACHER: '0000034157',
+    NON_EXIST_TEACHER: '1133557799',
+
+
+    // Faculties
+    EXIST_FACULTY: 21,
+    NON_EXIST_FACULTY: 99,
+    EXIST_FACULTY_GROUP: 1,
+    NON_EXIST_FACULTY_GROUP: 9,
 }
