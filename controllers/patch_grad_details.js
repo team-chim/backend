@@ -12,7 +12,7 @@ module.exports = (req, res) => {
     let mNameTh = req.body.mnameth || req.body.mNameTh;
     let lNameTh = req.body.lnameth || req.body.lNameTh;
     let studentEmail = req.body.studentemail || req.body.studentEmail;
-    let enterYear = req.body.enteryear || req.body.enterYear;
+    let enterYear = null;
     let advisor = req.body.advisor;
     let nation = req.body.nation;
     let majorFaculty = req.body.majorfaculty || req.body.majorFaculty;
@@ -33,7 +33,7 @@ module.exports = (req, res) => {
     if (mNameTh) studentObj.MnameTH = mNameTh;
     if (lNameTh) studentObj.LnameTH = lNameTh;
     if (studentEmail) studentObj.StudentEmail = studentEmail;
-    // if (enterYear)      studentObj.EnterYear        = enterYear;
+    if (!enterYear)      studentObj.EnterYear        = enterYear;
     if (advisor) studentObj.Adviser = advisor;
     if (nation) studentObj.Nation = nation;
     if (majorFaculty) studentObj.MajorFaculty = majorFaculty;
