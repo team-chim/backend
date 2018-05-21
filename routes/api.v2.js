@@ -52,6 +52,7 @@ router.get('/students/:stuid/schedules/midterm/:year/:semester', require('../con
 router.get('/students/:stuid/fee', require('../controllers/get_student_fee'));
 router.get('/students/:stuid/payments', require('../controllers/get_payment_status'));
 router.put('/students/:stuid/payments', require('../controllers/put_new_payment'));
+router.delete('/student/:stuid/payments', require('../controllers/delete_payment'));
 
 /* Student Internship */
 router.get('/students/:stuid/internships', require('../controllers/get_student_internships'));
