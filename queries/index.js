@@ -90,6 +90,8 @@ module.exports = {
     UPDATE_UNDERGRAD: loadSql('201_update_undergrad.sql'),
     UPDATE_TEACHER: loadSql('202_update_teacher.sql'),
     UPDATE_MANAGEMENTSHIP: loadSql('204_update_managementship.sql'),
+    UPDATE_SUBJECT: loadSql('207_update_subject.sql'),
+    UPDATE_CLASS: loadSql('208_update_class.sql'),
 
     FIND_TEACH_SCHEDULE : loadSql('70_teach_schedule.sql'),
     FIND_SEMESTER_IN_YEAR: loadSql('71_find_semester_in_year.sql'),
