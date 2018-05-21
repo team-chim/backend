@@ -5,7 +5,7 @@ module.exports = (req, res) => {
 
     // Must match DB
     let newAcademicYear = {
-        Year: req.body.year,
+        Year: req.body.year || req.body.Year,
     }
 
     if (!newAcademicYear.Year) {

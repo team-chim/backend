@@ -7,11 +7,11 @@ module.exports = {
     NON_EXIST_ACADEMIC_YEAR: 8888,
 
 	OLD_VALID_ACADEMIC_YEAR: {
-		year: '2012'
+		Year: 2012
 	},
 	
 	NEW_VALID_ACADEMIC_YEAR: {
-		year: '2019'
+		Year: 2019
     },
 
     // Semester
@@ -21,33 +21,33 @@ module.exports = {
     NON_EXIST_SEMESTER: 9,
 	
 	OLD_VALID_SEMESTER:{
-		year: 2014,
-		semester: 1,
-		semesterStartDate: '2013-08-01',
-		semesterEndDate: '2013-12-20',
-		registerStartDate: '2013-06-15',
-		registerEndDate: '2013-06-30',
-		addingStartDate: '2013-08-01',
-		addingEndDate: '2013-08-15',
-		droppingStartDate: '2013-08-01',
-		droppingEndDate: '2013-08-15',
-		withdrawStartDate: '2013-08-16',
-		withdrawEndDate: '2013-10-30',
+		Year: 2014,
+		Semester: 1,
+		SemesterStartDate: '2013-08-01',
+		SemesterEndDate: '2013-12-20',
+		RegisterStartDate: '2013-06-15',
+		RegisterEndDate: '2013-06-30',
+		AddingStartDate: '2013-08-01',
+		AddingEndDate: '2013-08-15',
+		DroppingStartDate: '2013-08-01',
+		DroppingEndDate: '2013-08-15',
+		WithdrawStartDate: '2013-08-16',
+		WithdrawEndDate: '2013-10-30',
 	},
 	
 	NEW_VALID_SEMESTER:{
-		year: 2014,
-		semester: 2,
-		semesterStartDate: '2013-09-01',
-		semesterEndDate: '2014-01-20',
-		registerStartDate: '2013-07-15',
-		registerEndDate: '2013-07-30',
-		addingStartDate: '2013-09-01',
-		addingEndDate: '2013-09-15',
-		droppingStartDate: '2013-09-01',
-		droppingEndDate: '2013-09-15',
-		withdrawStartDate: '2013-09-16',
-		withdrawEndDate: '2013-11-30',
+		Year: 2014,
+		Semester: 2,
+		SemesterStartDate: '2013-09-01',
+		SemesterEndDate: '2014-01-20',
+		RegisterStartDate: '2013-07-15',
+		RegisterEndDate: '2013-07-30',
+		AddingStartDate: '2013-09-01',
+		AddingEndDate: '2013-09-15',
+		DroppingStartDate: '2013-09-01',
+		DroppingEndDate: '2013-09-15',
+		WithdrawStartDate: '2013-09-16',
+		WithdrawEndDate: '2013-11-30',
 	},
     
     // Academic year & Semester Methods
@@ -57,11 +57,11 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            db.query('DELETE FROM rexchula.`academic_year` WHERE Year = ?;', this.NEW_VALID_ACADEMIC_YEAR.year, (err, results, fields) => {
+            db.query('DELETE FROM rexchula.`academic_year` WHERE Year = ?;', this.NEW_VALID_ACADEMIC_YEAR.Year, (err, results, fields) => {
                 if (err) {
                     console.log(err);
                 }
-                db.query('DELETE FROM rexchula.`academic_year` WHERE Year = ?;', this.OLD_VALID_ACADEMIC_YEAR.year, (err, results, fields) => {
+                db.query('DELETE FROM rexchula.`academic_year` WHERE Year = ?;', this.OLD_VALID_ACADEMIC_YEAR.Year, (err, results, fields) => {
                     if (err) {
                         console.log(err);
                     }
@@ -81,11 +81,11 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            db.query('DELETE FROM rexchula.`semester` WHERE Year = ? AND Semester = ?;', [this.NEW_VALID_SEMESTER.year, this.NEW_VALID_SEMESTER.semester], (err, results, fields) => {
+            db.query('DELETE FROM rexchula.`semester` WHERE Year = ? AND Semester = ?;', [this.NEW_VALID_SEMESTER.Year, this.NEW_VALID_SEMESTER.Semester], (err, results, fields) => {
                 if (err) {
                     console.log(err);
                 }
-                db.query('DELETE FROM rexchula.`semester` WHERE Year = ? AND Semester = ?;', [this.OLD_VALID_SEMESTER.year, this.OLD_VALID_SEMESTER.semester], (err, results, fields) => {
+                db.query('DELETE FROM rexchula.`semester` WHERE Year = ? AND Semester = ?;', [this.OLD_VALID_SEMESTER.Year, this.OLD_VALID_SEMESTER.Semester], (err, results, fields) => {
                     if (err) {
                         console.log(err);
                     }
@@ -99,4 +99,5 @@ module.exports = {
             });
         });
     },
+    
 }

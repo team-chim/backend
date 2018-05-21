@@ -15,7 +15,7 @@ module.exports = (req, res) => {
                 message: results.message
             });
         } else {
-            res.status(200).send({
+            res.status(204).send({
                 affectedRows: results.affectedRows,
                 message: results.message
             });

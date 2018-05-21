@@ -7,18 +7,17 @@ module.exports = (req, res) => {
     year = req.params.year
     let newAcademicSemester = {
         Year: year,
-        Semester:               req.body.semester,
-        SemesterStartDate:      req.body.semesterStartDate,
-        SemesterEndDate:        req.body.semesterEndDate,
-        RegisterStartDate:      req.body.registerStartDate,
-        RegisterEndDate:        req.body.registerEndDate,
-        AddingStartDate:        req.body.addingStartDate,
-        AddingEndDate:          req.body.addingEndDate,
-        DroppingStartDate:      req.body.droppingStartDate,
-        DroppingEndDate:        req.body.droppingEndDate,
-        WithdrawStartDate:      req.body.withdrawStartDate,
-        WithdrawEndDate:        req.body.withdrawEndDate,
-
+        Semester:               req.body.semester || req.body.Semester,
+        SemesterStartDate:      req.body.semesterStartDate || req.body.SemesterStartDate,
+        SemesterEndDate:        req.body.semesterEndDate || req.body.SemesterEndDate,
+        RegisterStartDate:      req.body.registerStartDate || req.body.RegisterStartDate,
+        RegisterEndDate:        req.body.registerEndDate || req.body.RegisterEndDate,
+        AddingStartDate:        req.body.addingStartDate || req.body.AddingStartDate,
+        AddingEndDate:          req.body.addingEndDate || req.body.AddingEndDate,
+        DroppingStartDate:      req.body.droppingStartDate || req.body.DroppingStartDate,
+        DroppingEndDate:        req.body.droppingEndDate || req.body.DroppingEndDate,
+        WithdrawStartDate:      req.body.withdrawStartDate || req.body.WithdrawStartDate,
+        WithdrawEndDate:        req.body.withdrawEndDate || req.body.WithdrawEndDate,
     }
 
     if (!newAcademicSemester.Semester) {
