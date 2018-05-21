@@ -61,6 +61,7 @@ router.get('/students/:stuid/official_internship/reports/:repno', require('../co
 router.get('/subjects', require('../controllers/get_subjects'));
 router.put('/subjects', require('../controllers/put_new_subject'));
 router.get('/subjects/:subid', require('../controllers/get_subject'));
+router.delete('/subjects/:subid', require('../controllers/delete_subject'));
 router.get('/subjects/:subid/:year/:semester', require('../controllers/get_subject'));
 router.put('/subjects/:subid/:year/:semester', require('../controllers/put_new_class'));
 router.get('/subjects/:subid/:year/:semester/sections', require('../controllers/get_sections'));
