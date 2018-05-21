@@ -20,6 +20,7 @@ router.get('/academic/years/:year/semesters/:semester', require('../controllers/
 /* Student */
 router.get('/students', require('../controllers/get_students'));
 router.put('/students/undergrad', require('../controllers/put_new_undergrad'));
+router.patch('/students/undergrad/:stuid', require('../controllers/patch_undergrad_details'));
 router.put('/students/grad', require('../controllers/put_new_grad'));
 router.get('/students/:stuid', require('../controllers/get_student_details'));
 router.delete('/students/:stuid', require('../controllers/delete_student'));
@@ -55,7 +56,9 @@ router.put('/students/:stuid/internships', require('../controllers/put_new_inter
 router.get('/students/:stuid/internships/:year', require('../controllers/get_student_internships'));
 router.get('/students/:stuid/official_internship', require('../controllers/get_student_official_internship')); 
 router.get('/students/:stuid/official_internship/reports', require('../controllers/get_student_reports')); 
+router.put('/students/:stuid/official_internship/reports', require('../controllers/put_new_student_report')); 
 router.get('/students/:stuid/official_internship/reports/:repno', require('../controllers/get_student_reports')); 
+router.put('/students/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
 
 /* Subject */
 router.get('/subjects', require('../controllers/get_subjects'));

@@ -5,4 +5,4 @@ FROM (
 	WHERE StudentID = ?
 ) AS s
 JOIN rexchula.`faculty` AS f ON f.FacultyID = s.MajorFaculty
-JOIN rexchula.`department` AS d ON d.DepartmentID = s.MajorDepartment;
+JOIN rexchula.`department` AS d ON d.DepartmentID = s.MajorDepartment AND d.FacultyID = f.FacultyID;

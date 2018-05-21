@@ -1,0 +1,2 @@
+INSERT INTO report
+SET ?;
