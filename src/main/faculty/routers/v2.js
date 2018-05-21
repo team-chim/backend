@@ -5,12 +5,14 @@ const router = express.Router()
 router.get('/', require('../controllers/get_faculties'));
 router.put('/', require('../controllers/put_new_faculty'));
 router.get('/:fid', require('../controllers/get_faculty'));
+router.patch('/:fid', require('../controllers/patch_faculty'));
 router.delete('/:fid', require('../controllers/delete_faculty'));
 
 /* Departments */
 router.get('/:fid/departments', require('../controllers/get_departments'));
 router.put('/:fid/departments', require('../controllers/put_new_department'));
 router.get('/:fid/departments/:depid', require('../controllers/get_department'));
+router.patch('/:fid/departments/:depid', require('../controllers/patch_department'));
 router.delete('/:fid/departments/:depid', require('../controllers/delete_department'));
 
 /* Head of Department */
