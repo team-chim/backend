@@ -95,7 +95,7 @@ module.exports = {
     UPDATE_SECTION: loadSql('209_update_section.sql'),
     UPDATE_DEPARTMENT: loadSql('210_update_department.sql'),
     UPDATE_FACULTY: loadSql('211_update_faculty.sql'),
-    // UPDATE_FACULTY_GROUP: loadSql('212_update_faculty_group.sql'),
+    UPDATE_FACULTY_GROUP: loadSql('212_update_faculty_group.sql'),
 
     FIND_TEACH_SCHEDULE : loadSql('70_teach_schedule.sql'),
     FIND_SEMESTER_IN_YEAR: loadSql('71_find_semester_in_year.sql'),
