@@ -1,5 +1,5 @@
-const db = require('../database')
-const SQL = require('../queries/index');
+const db = require('../../../database')
+const SQL = require('../../../queries/index');
 
 
 module.exports = (req, res) => {

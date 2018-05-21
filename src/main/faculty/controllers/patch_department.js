@@ -1,6 +1,5 @@
-const db = require('../database')
-const SQL = require('../queries/index');
-
+const db = require('../../../database')
+const SQL = require('../../../queries/index');
 
 // INSERT INTO student (`StudentID`, `FnameEN`, `MnameEN`, `LnameEN`, `FnameTH`, `MnameTH`, `LnameTH`, `StudentEmail`, `EnterYear`, `Adviser`, `Nation`, `WorksForFaculty`, `WorksForDepartment`, `WorksForDepartment`)
 module.exports = (req, res) => {
