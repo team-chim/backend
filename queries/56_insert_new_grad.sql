@@ -1,2 +1,2 @@
-INSERT INTO grad_student (`StudentID`)
-VALUES (?);
+INSERT INTO grad_student
+SET ?;

@@ -4,9 +4,9 @@ const app = require('../../app');
 const MOCK = require('../../config/mock.js')
 const EXIST_STUDENT = MOCK.EXIST_STUDENT;
 const NON_EXIST_STUDENT = MOCK.NON_EXIST_STUDENT;
-const NEW_UNDERGRAD = MOCK.NEW_UNDERGRAD;
-const NEW_GRAD = MOCK.NEW_GRAD;
-const OLD_STUDENT = MOCK.OLD_STUDENT;
+const NEW_VALID_UNDERGRAD = MOCK.NEW_VALID_UNDERGRAD;
+const NEW_VALID_GRAD = MOCK.NEW_VALID_GRAD;
+const OLD_VALID_STUDENT = MOCK.OLD_VALID_STUDENT;
 
 const EXIST_YEAR = 2016;
 const EXIST_SEMESTER = 2;
@@ -166,37 +166,45 @@ describe('Get a specific report of a student - /v2/students/:stuid/official_inte
 
 /// PUT ///
 
-// describe('Insert an undergrad - /v2/students/undergrad', () => {
+describe('Insert an undergrad - /v2/students/undergrad', () => {
     
-//     beforeEach(() => {
-//         MOCK.resetStudentTable();
-//     });
+    beforeEach((done) => {
+        MOCK.resetStudentTable(done);
+    });
 
-//     test(`It should response the PUT method on exist [stuid = ${NEW_UNDERGRAD}]`, async () => {
-//         const response = await request(app).put(`/v2/students/undergrad/${NEW_UNDERGRAD}`);
-//         expect(response.statusCode).toBe(202);
-//     });
+    test(`It should response the PUT method on exist [stuid = ${NEW_VALID_UNDERGRAD.studentid}]`, async () => {
+        const response = await request(app).put(`/v2/students/undergrad`).send(NEW_VALID_UNDERGRAD);
+        expect(response.statusCode).toBe(202);
 
-//     afterEach(() => {
-//         MOCK.resetStudentTable();
-//     })
-// })
+        // Test Duplicate
+        const response_dup = await request(app).put(`/v2/students/undergrad`).send(NEW_VALID_UNDERGRAD);
+        expect(response_dup.statusCode).toBe(400);
+    });
 
-// describe('Insert a grad - /v2/students/grad', () => {
+    afterEach((done) => {
+        MOCK.resetStudentTable(done);
+    })
+})
+
+describe('Insert a grad - /v2/students/grad', () => {
     
-//     beforeEach(() => {
-//         MOCK.resetStudentTable();
-//     });
+    beforeEach((done) => {
+        MOCK.resetStudentTable(done);
+    });
 
-//     test(`It should response the PUT method on exist [stuid = ${NEW_GRAD}]`, async () => {
-//         const response = await request(app).put(`/v2/students/grad/${NEW_GRAD}`);
-//         expect(response.statusCode).toBe(202);
-//     });
+    test(`It should response the PUT method on exist [stuid = ${NEW_VALID_GRAD.studentid}]`, async () => {
+        const response = await request(app).put(`/v2/students/grad`).send(NEW_VALID_GRAD);
+        expect(response.statusCode).toBe(202);
 
-//     afterEach(() => {
-//         MOCK.resetStudentTable();
-//     })
-// })
+        // Test Duplicate
+        const response_dup = await request(app).put(`/v2/students/grad`).send(NEW_VALID_GRAD);
+        expect(response_dup.statusCode).toBe(400);
+    });
+
+    afterEach((done) => {
+        MOCK.resetStudentTable(done);
+    })
+})
 
 
 
@@ -204,3 +212,18 @@ describe('Get a specific report of a student - /v2/students/:stuid/official_inte
 // router.put('/students/grad', require('../controllers/put_new_grad'));
 // router.get('/students/:stuid', require('../controllers/get_student_details'));
 // router.delete('/students/:stuid', require('../controllers/delete_student'));
+
+// .post('/login')
+//             .send({
+//                 username: 'username@wonderflow.co',
+//                 password: 'password'
+//             })
+//             .expect(200)
+//             .end(function(err, res) {
+
+//                 expect(res.body.token).to.be.not.undefined;
+//                 expect(res.body.user).to.be.not.undefined;
+//                 expect(res.body.user.username).to.be.eql('username@wonderflow.co');
+
+//                 done();
+//             })
