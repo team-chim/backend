@@ -68,9 +68,11 @@ router.get('/subjects/:subid', require('../controllers/get_subject'));
 router.delete('/subjects/:subid', require('../controllers/delete_subject'));
 router.get('/subjects/:subid/:year/:semester', require('../controllers/get_subject'));
 router.put('/subjects/:subid/:year/:semester', require('../controllers/put_new_class'));
+router.delete('/subjects/:subid/:year/:semester', require('../controllers/delete_class'));
 router.get('/subjects/:subid/:year/:semester/sections', require('../controllers/get_sections'));
 router.put('/subjects/:subid/:year/:semester/sections', require('../controllers/put_new_section'));
 router.get('/subjects/:subid/:year/:semester/sections/:sectno', require('../controllers/get_section_detail'));
+router.delete('/subjects/:subid/:year/:semester/sections/:sectno', require('../controllers/delete_section'));
 router.get('/subjects/:subid/:year/:semester/sections/:sectno/students', require('../controllers/get_student_in_section'));
 
 /* Teacher */
