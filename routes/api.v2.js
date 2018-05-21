@@ -104,6 +104,7 @@ router.get('/faculties/:fid/departments/:depid', require('../controllers/get_dep
 router.delete('/faculties/:fid/departments/:depid', require('../controllers/delete_department'));
 router.get('/faculties/:fid/departments/:depid/head', require('../controllers/get_department_head'));
 router.put('/faculties/:fid/departments/:depid/head', require('../controllers/put_new_department_head'));
+router.patch('/faculties/:fid/departments/:depid/head', require('../controllers/patch_managementship'));
 router.delete('/faculties/:fid/departments/:depid/head', require('../controllers/delete_managementship'));
 router.get('/faculties/:fid/departments/:depid/teachers', require('../controllers/get_department_teachers'));
 
