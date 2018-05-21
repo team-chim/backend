@@ -212,18 +212,3 @@ describe('Insert a grad - /v2/students/grad', () => {
 // router.put('/students/grad', require('../controllers/put_new_grad'));
 // router.get('/students/:stuid', require('../controllers/get_student_details'));
 // router.delete('/students/:stuid', require('../controllers/delete_student'));
-
-// .post('/login')
-//             .send({
-//                 username: 'username@wonderflow.co',
-//                 password: 'password'
-//             })
-//             .expect(200)
-//             .end(function(err, res) {
-
-//                 expect(res.body.token).to.be.not.undefined;
-//                 expect(res.body.user).to.be.not.undefined;
-//                 expect(res.body.user.username).to.be.eql('username@wonderflow.co');
-
-//                 done();
-//             })
