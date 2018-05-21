@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
+const app = require('../../src/app');
 
-const MOCK = require('../../config/mock.js')
+const MOCK = require('../../src/config/mock.js')
 const EXIST_STUDENT = MOCK.EXIST_STUDENT;
 const NON_EXIST_STUDENT = MOCK.NON_EXIST_STUDENT;
 
