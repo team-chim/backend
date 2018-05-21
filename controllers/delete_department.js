@@ -13,7 +13,7 @@ module.exports = (req, res) => {
             "message": "Please specify a Faculty ID"
         })
     } else {
-        db.query("DELETE FROM faculty WHERE FacultyID = ? AND DepartmentID = ?;", [facultyid, departmentid], (err, results, fields) => {
+        db.query("DELETE FROM department WHERE FacultyID = ? AND DepartmentID = ?;", [facultyid, departmentid], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);

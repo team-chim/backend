@@ -12,7 +12,7 @@ module.exports = (req, res) => {
             "message": "Please specify a Faculty Group ID"
         })
     } else {
-        db.query("DELETE FROM class WHERE FacultyGroupID = ?;", faculty_group_id, (err, results, fields) => {
+        db.query("DELETE FROM faculty_group WHERE FacultyGroupID = ?;", faculty_group_id, (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);

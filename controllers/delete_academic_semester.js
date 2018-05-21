@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     const year = req.params.year;
     const semester = req.params.semester;
 
-    db.query("DELETE FROM academic_year WHERE Year = ? AND Semester = ?;", [year, semester], (err, results, fields) => {
+    db.query("DELETE FROM academic_semester WHERE Year = ? AND Semester = ?;", [year, semester], (err, results, fields) => {
         if (err) {
             console.log(err);
             res.sendStatus(500);
