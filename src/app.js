@@ -8,10 +8,6 @@ const compression = require('compression');
 const lowercasePaths = require('express-lowercase-paths');
 const multer = require('multer');
 
-// Allows requires with ^ as root path in source files that require this file
-const rooty = require('rooty'); 
-rooty();
-
 // Routes
 const apiv2 = require('./routes/api.v2');
 
