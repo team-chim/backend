@@ -39,9 +39,9 @@ module.exports = (req, res) => {
     if (majorFaculty) studentObj.MajorFaculty = majorFaculty;
     if (majorDepartment) studentObj.MajorDepartment = majorDepartment;
 
-    let undergradObj = {}
-    if (minorFaculty) undergradObj.MinorFaculty = minorFaculty;
-    if (minorDepartment) undergradObj.MinorDepartment = minorDepartment;
+    // let undergradObj = {}
+    // if (minorFaculty) undergradObj.MinorFaculty = minorFaculty;
+    // if (minorDepartment) undergradObj.MinorDepartment = minorDepartment;
 
 
     // let undergradParams = [minorFaculty, minorDepartment];
@@ -54,17 +54,17 @@ module.exports = (req, res) => {
                 message: err.code
             })
         } else {
-            db.query(SQL.UPDATE_UNDERGRAD, [undergradObj, stuid], (err, results, fields) => {
-                if (err) {
-                    console.log(err)
-                    res.status(400).send({
-                        message: err.code
-                    })
-                } else {
-                    res.sendStatus(202);
-                }
-            })
-            // res.sendStatus(202)
+            // db.query(SQL.UPDATE_GRAD, [gradObj, stuid], (err, results, fields) => {
+                // if (err) {
+                    // console.log(err)
+                    // res.status(400).send({
+                        // message: err.code
+                    // })
+                // } else {
+                    // res.sendStatus(202);
+                // }
+            // })
+            res.sendStatus(202)
         }
     })
 

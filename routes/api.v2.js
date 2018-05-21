@@ -20,8 +20,9 @@ router.get('/academic/years/:year/semesters/:semester', require('../controllers/
 /* Student */
 router.get('/students', require('../controllers/get_students'));
 router.put('/students/undergrad', require('../controllers/put_new_undergrad'));
-router.patch('/students/undergrad/:stuid', require('../controllers/patch_undergrad_details'));
+router.patch('/students/undergrad/', require('../controllers/patch_undergrad_details'));
 router.put('/students/grad', require('../controllers/put_new_grad'));
+router.patch('/students/grad/', require('../controllers/patch_grad_details'));
 router.get('/students/:stuid', require('../controllers/get_student_details'));
 router.delete('/students/:stuid', require('../controllers/delete_student'));
 router.get('/students/:stuid/registered', require('../controllers/get_registered_subjects'));
@@ -78,6 +79,7 @@ router.get('/subjects/:subid/:year/:semester/sections/:sectno/students', require
 router.get('/teachers', require('../controllers/get_teachers'));
 router.put('/teachers', require('../controllers/put_new_teacher'));
 router.get('/teachers/:tid', require('../controllers/get_teacher_details'));
+// router.patch('/teachers/:tid', require('../controllers/patch_teacher_details'));
 router.delete('/teachers/:tid', require('../controllers/delete_teacher'));
 router.get('/teachers/:tid/advisees', require('../controllers/get_student_under_advisor'));
 router.get('/teachers/:tid/schedules/teach', require('../controllers/get_teach_schedule'));
