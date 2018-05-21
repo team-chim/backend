@@ -1,0 +1,14 @@
+version: "3"
+services:
+  db-backend:
+    build: .
+    image: "db/api"
+    ports:
+      - "3145:3145"
+    volumes:
+      - "./src:/usr/src/app/src"
+
+networks:
+  default:
+    external:
+      name: ddl_default

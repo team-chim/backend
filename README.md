@@ -18,3 +18,9 @@ $ docker run -p 3145:3145 --rm -it --name db-backend -v $(pwd)/src:/usr/src/app/
 ```
 
 To run with docker-compose ddl, remove `--link some-mysql:mysql ` and replace with `--net ddl_default` option instead (or other corresponding docker network names).
+
+
+To run with docker-compose:
+```
+$ docker-compose up
+```
