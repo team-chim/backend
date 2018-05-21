@@ -13,9 +13,11 @@ router.get('/test', (req, res) => {
 router.get('/academic/years', require('../controllers/get_academic_years'));
 router.put('/academic/years', require('../controllers/put_new_academic_year'));
 router.get('/academic/years/:year', require('../controllers/get_academic_years'));
+router.delete('/academic/years/:year', require('../controllers/delete_academic_year'));
 router.get('/academic/years/:year/semesters', require('../controllers/get_academic_semesters'));
 router.put('/academic/years/:year/semesters', require('../controllers/put_new_academic_semester'));
 router.get('/academic/years/:year/semesters/:semester', require('../controllers/get_academic_semesters'));
+router.delete('/academic/years/:year/semesters/:semester', require('../controllers/delete_academic_semester'));
 
 /* Student */
 router.get('/students', require('../controllers/get_students'));
