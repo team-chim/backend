@@ -298,7 +298,7 @@ module.exports =  {
 	
 	//Payment
 	
-	OLD_VALID_PAYMENT{
+	OLD_VALID_PAYMENT: {
 		StudentID: '5732671526',
 		Year: '2016',
 		Semester: '1',
@@ -307,7 +307,7 @@ module.exports =  {
 		PaymentDate: '2016-07-20',
 	},
 	
-	NEW_VALID_PAYMENT{
+	NEW_VALID_PAYMENT: {
 		StudentID: '5732671526',
 		Year: '2016',
 		Semester: '1',
@@ -318,7 +318,7 @@ module.exports =  {
 	
 	//Class
 	
-	OLD_VALID_CLASS{
+	OLD_VALID_CLASS: {
 		SubjectID: '2301103',
 		Year: '2016',
 		Semester: '2',
@@ -328,7 +328,7 @@ module.exports =  {
 		FinalEndDatetime: '2017-05-17 16:00:00',
 	},
 	
-	NEW_VALID_CLASS{
+	NEW_VALID_CLASS: {
 		SubjectID: '2301103',
 		Year: '2016',
 		Semester: '2',
