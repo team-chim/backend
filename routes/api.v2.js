@@ -55,6 +55,7 @@ router.put('/students/:stuid/internships', require('../controllers/put_new_inter
 router.get('/students/:stuid/internships/:year', require('../controllers/get_student_internships'));
 router.get('/students/:stuid/official_internship', require('../controllers/get_student_official_internship')); 
 router.get('/students/:stuid/official_internship/reports', require('../controllers/get_student_reports')); 
+router.put('/students/:stuid/official_internship/reports', require('../controllers/put_new_student_report')); 
 router.get('/students/:stuid/official_internship/reports/:repno', require('../controllers/get_student_reports')); 
 router.put('/students/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
 
