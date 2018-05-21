@@ -80,7 +80,7 @@ router.get('/teachers/:tid/schedules/teach/:year', require('../controllers/get_t
 router.get('/teachers/:tid/schedules/teach/:year/:semester', require('../controllers/get_teach_schedule'));
 // Edit Teacher Details
 
-/* Misc. */
+/* Staff Functionalities */
 router.get('/students/unpaid', require('../controllers/get_unpaid_students'));
 router.get('/students/official_internships/:year', require('../controllers/get_all_official_internship_year')); 
 router.get('/offers', require('../controllers/get_offers'));

@@ -24,6 +24,8 @@ module.exports = (req, res) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.sendStatus(404);
             } else {
                 if (results.length >= 1) {
                     db.query(SQL.FIND_DEPARTMENT_HEAD, [facultyid, departmentid], (err, dephead, fields) => {
@@ -46,7 +48,6 @@ module.exports = (req, res) => {
                             })
                         }
                     })
-                    res.send(results[0]);
                 } else {
                     res.sendStatus(404);
                 }

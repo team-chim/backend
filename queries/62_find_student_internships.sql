@@ -9,4 +9,4 @@ NATURAL JOIN (
 	NATURAL JOIN student S
     GROUP BY StudentID
 ) AS Q
-WHERE S.StudentID = '5730123421';
+WHERE S.StudentID = ?;
