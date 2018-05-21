@@ -1,19 +1,20 @@
-// router.delete('/faculties/:fid/departments/:depid', require('../controllers/delete_department'));
+// /student/:stuid/payments
 
 const db = require('../database')
 const SQL = require('../queries/index');
 
 module.exports = (req, res) => {
     
-    const facultyid = req.params.fid;
-    const departmentid = req.params.depid;
+    const studentid = req.params.stuid;
+    const year = req.body.year;
+    const semester = req.body.semester;
 
-    if (!facultyid) {
+    if (!year || !semester) {
         res.status(422).send({
-            "message": "Please specify a Faculty ID"
+            "message": "Please specify a Year and Semester"
         })
     } else {
-        db.query("DELETE FROM department WHERE FacultyID = ? AND DepartmentID = ?;", [facultyid, departmentid], (err, results, fields) => {
+        db.query("DELETE FROM payment WHERE StudentID = ? && Year = ? && Semester = ?;", [studentid, year, semester], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
