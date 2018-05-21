@@ -2,9 +2,9 @@
 
 Backend for the 2110422 Database Management Systems Project.
 
-# Usage Instructions
+## Usage Instructions
 
-## With `docker`
+### With `docker`
 To build:
 ```
 $ docker build -t db/api .
@@ -18,7 +18,7 @@ $ docker run -p 3145:3145 --rm -it --name db-backend --link some-mysql:some-mysq
 ```
 This command exposes port 3145 to the host machine and also removes itself after the run has completed (or the run has been interrupted).
 
-### Additional Features
+#### Additional Features
 
 To run with __hot reload__:
 ```
@@ -27,7 +27,7 @@ $ docker run -p 3145:3145 --rm -it --name db-backend -v $(pwd)/src:/usr/src/app/
 
 To run with __`docker-compose`-ed ddl__, remove `--link some-mysql:mysql ` and replace with `--net ddl_default` option instead (or other corresponding docker network names).
 
-## With `docker-compose`
+### With `docker-compose`
 
 
 To run with docker-compose:
@@ -36,9 +36,9 @@ $ docker-compose up
 ```
 
 
-# Project Structure
+## Project Structure
 
-## Root Structure 
+### Root Structure 
 
 This section describes the directory structure of the root folder, the folder you will find on opening the project. Most of the code will be kept in the `src` folder.
 
@@ -75,7 +75,7 @@ This section describes the directory structure of the root folder, the folder yo
 - `src/tests`: Contains tests that don't belong to any particular package.
 
 
-## Main Structure
+### Main Structure
 
 This section describes the __main__ folder (`src/main`). This folder contains subdirectories divided by their function, into _'packages'_. 
 
@@ -93,7 +93,7 @@ src/main
 
 Each of the folder (package) will be structured as described in the __Package Structure__ section.
 
-## Package Structure
+### Package Structure
 ```
 src/main/academic
 ├── controllers
@@ -106,9 +106,9 @@ src/main/academic
 - `tests`: Contains the test to be run by `jest`. Test files should be of the form `*.test.js`
 
 
-# Development Instructions
+## Development Instructions
 
-## To add a new feature
+### To add a new feature
 
   1a. _(Optional)_ Add the SQL query in the `src/queries` folder. Numbering is only meant to group similar functions together and can be chosen arbitrarily.  
   1b. _(Optional)_ If a new SQL query is added in step 1a, register the query in `src/queries/index.js`.   
