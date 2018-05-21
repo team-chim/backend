@@ -11,6 +11,7 @@ router.delete('/:fid', require('../controllers/delete_faculty'));
 router.get('/:fid/departments', require('../controllers/get_departments'));
 router.put('/:fid/departments', require('../controllers/put_new_department'));
 router.get('/:fid/departments/:depid', require('../controllers/get_department'));
+router.patch('/:fid/departments/:depid', require('../controllers/patch_department'));
 router.delete('/:fid/departments/:depid', require('../controllers/delete_department'));
 
 /* Head of Department */
