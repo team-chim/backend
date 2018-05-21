@@ -16,7 +16,7 @@ To run:
 ```
 $ docker run -p 3145:3145 --rm -it --name db-backend --link some-mysql:some-mysql db/api
 ```
-This command exposes port 3145 to the host machine and also removes itself after the run has completed (or interrupted).
+This command exposes port 3145 to the host machine and also removes itself after the run has completed (or the run has been interrupted).
 
 ### Additional Features
 
