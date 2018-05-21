@@ -111,6 +111,7 @@ router.get('/faculties/:fid/departments/:depid/teachers', require('../controller
 router.get('/faculty_groups', require('../controllers/get_faculty_groups'));
 router.put('/faculty_groups', require('../controllers/put_new_faculty_group'));
 router.get('/faculty_groups/:fgid', require('../controllers/get_faculty_groups'));
+router.delete('/faculty_groups/:fgid', require('../controllers/delete_faculty_group'));
 
 /* Company & Branch */
 router.get('/companies', require('../controllers/get_companies'));
