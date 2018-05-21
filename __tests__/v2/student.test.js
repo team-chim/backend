@@ -13,6 +13,8 @@ const EXIST_SEMESTER = 2;
 
 const INTERN_YEAR = 2016;
 
+/// GET (STUDENT) ///
+
 describe('Get all students - /v2/students', () => {
     test('It should response the GET method', async () => {
         const response = await request(app).get('/v2/students');
@@ -68,6 +70,8 @@ describe('Get all register subjects of a student in a semester - /v2/students/:s
     });
 })
 
+/// GET (STUDENT - SCHEDULE) ///
+
 describe('Get the study schedule of a student - /v2/students/:stuid/schedules/study/:year/:semester', () => {
     test(`It should response the GET method on exist [stuid = ${EXIST_STUDENT}]`, async () => {
         const response = await request(app).get(`/v2/students/${EXIST_STUDENT}/schedules/study/${EXIST_YEAR}/${EXIST_SEMESTER}`);
@@ -103,6 +107,8 @@ describe('Get the final schedule of a student - /v2/students/:stuid/schedules/fi
         expect(response.statusCode).toBe(404);
     });
 })
+
+// GET (STUDENT - INTERNSHIP) //
 
 describe('Get the internships of a student - /v2/students/:stuid/internships', () => {
     test(`It should response the GET method on exist [stuid = ${EXIST_STUDENT}]`, async () => {
@@ -164,7 +170,7 @@ describe('Get a specific report of a student - /v2/students/:stuid/official_inte
     });
 })
 
-/// PUT ///
+//// PUT ////
 
 describe('Insert an undergrad - /v2/students/undergrad', () => {
     
@@ -206,9 +212,24 @@ describe('Insert a grad - /v2/students/grad', () => {
     })
 })
 
+//// DELETE ////
 
+describe('Delete a student - /v2/students/:stuid', () => {
+    
+    beforeEach((done) => {
+        MOCK.resetStudentTable(done);
+    });
 
-// router.put('/students/undergrad', require('../controllers/put_new_undergrad'));
-// router.put('/students/grad', require('../controllers/put_new_grad'));
-// router.get('/students/:stuid', require('../controllers/get_student_details'));
-// router.delete('/students/:stuid', require('../controllers/delete_student'));
+    test(`It should response the DELETE method on exist [stuid = ${OLD_VALID_STUDENT.studentid}]`, async () => {
+        const response = await request(app).delete(`/v2/students/${OLD_VALID_STUDENT.studentid}`);
+        expect(response.statusCode).toBe(204);
+
+        // Test Non exist
+        const response_dup = await request(app).delete(`/v2/students/${OLD_VALID_STUDENT.studentid}`);
+        expect(response_dup.statusCode).toBe(404);
+    });
+
+    afterEach((done) => {
+        MOCK.resetStudentTable(done);
+    })
+})

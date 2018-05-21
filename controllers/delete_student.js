@@ -14,8 +14,13 @@ module.exports = (req, res) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.affectedRows > 0) {
+                res.status(204).send({
+                    affectedRows: results.affectedRows,
+                    message: results.message
+                });
             } else {
-                res.status(200).send({
+                res.status(404).send({
                     affectedRows: results.affectedRows,
                     message: results.message
                 });
