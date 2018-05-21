@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for DB project",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "jest --coverage",
-    "start": "node server"
+    "start": "node src/server"
   },
   "repository": {
     "type": "git",

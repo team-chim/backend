@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
+const app = require('../../src/app');
 
-const MOCK = require('../../config/mock.js')
+const MOCK = require('../../src/config/mock.js');
 const EXIST_COMPID = 3;
 const NON_EXIST_COMPID = 9999;
 const EXIST_BRID = 2;
