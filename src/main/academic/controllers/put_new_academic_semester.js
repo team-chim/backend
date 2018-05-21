@@ -21,16 +21,11 @@ module.exports = (req, res) => {
 
     }
 
-    if (!newAcademicSemester.Year) {
-        res.status(422).send({
-            "message": "Please specify year"
-        })
-    } if (!newAcademicSemester.Year) {
+    if (!newAcademicSemester.Semester) {
         res.status(422).send({
             "message": "Please specify semester"
         })
-    } 
-    if (!newAcademicSemester.Year ||
+    } else if (!newAcademicSemester.Year ||
         !newAcademicSemester.AddingEndDate ||
         !newAcademicSemester.AddingStartDate ||
         !newAcademicSemester.DroppingEndDate ||

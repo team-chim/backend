@@ -1,18 +1,9 @@
-	//Not checked yet  Use with careful !!!!
-	const db = require('../database')
+//Not checked yet  Use with careful !!!!
+const db = require('../database')
 
 module.exports =  {
-	// Academic_year
-	
-	OLD_VALID_ACADEMIC_YEAR: {
-		Year: '2012'
-	},
-	
-	NEW_VALID_ACADEMIC_YEAR: {
-		Year: '2019'
-	},
-	
-	// Company
+
+    // Company
 	
 	OLD_VALID_COMPANY: {
 		NameEN: 'AIS',
@@ -175,8 +166,8 @@ module.exports =  {
     },
 	
 
-
     // Student Methods
+
     resetStudentTable: function(done) {
         db.query('DELETE FROM rexchula.`student` WHERE StudentID = ?;', this.NON_EXIST_STUDENT, (err, results, fields) => {
             if (err) {
@@ -205,38 +196,6 @@ module.exports =  {
             });
         });
     },
-
-	// Semester
-	
-	OLD_VALID_SEMESTER:{
-		Year: 2013,
-		Semester: 1,
-		SemesterStartDate: '2013-08-01',
-		SemesterEndDate: '2013-12-20',
-		RegisterStartDate: '2013-06-15',
-		RegisterEndDate: '2013-06-30',
-		AddingStartDate: '2013-08-01',
-		AddingEndDate: '2013-08-15',
-		DroppingStartDate: '2013-08-01',
-		DroppingEndDate: '2013-08-15',
-		WithdrawStartDate: '2013-08-16',
-		WithdrawEndDate: '2013-10-30',
-	},
-	
-	NEW_VALID_SEMESTER:{
-		Year: 2013,
-		Semester: 1,
-		SemesterStartDate: '2013-09-01',
-		SemesterEndDate: '2014-01-20',
-		RegisterStartDate: '2013-07-15',
-		RegisterEndDate: '2013-07-30',
-		AddingStartDate: '2013-09-01',
-		AddingEndDate: '2013-09-15',
-		DroppingStartDate: '2013-09-01',
-		DroppingEndDate: '2013-09-15',
-		WithdrawStartDate: '2013-09-16',
-		WithdrawEndDate: '2013-11-30',
-	},
     
 	//Internship_offer
 	
@@ -248,10 +207,10 @@ module.exports =  {
 		PositionDescriptionEN: 'AAA',
 		PositionDescriptionTH: 'เอเอเอ',
 		NumberOfPosition: '3',
-		OtherRequirements: NULL,
+		OtherRequirements: null,
 		StatedMinimumGrade: '3.00',
 		StatedSalary: '1000',
-		OtherBenefits: NULL,
+		OtherBenefits: null,
 		ExpiryDate: '2013-12-31',
 	},
 	
@@ -263,10 +222,10 @@ module.exports =  {
 		PositionDescriptionEN: 'BBB',
 		PositionDescriptionTH: 'บีบีบี',
 		NumberOfPosition: '3',
-		OtherRequirements: NULL,
+		OtherRequirements: null,
 		StatedMinimumGrade: '3.00',
 		StatedSalary: '1000',
-		OtherBenefits: NULL,
+		OtherBenefits: null,
 		ExpiryDate: '2014-02-01',
 	},
 
@@ -369,7 +328,7 @@ module.exports =  {
 		FacultyID: 21,
 		DepartmentID: 10,
 		StartDate: '2016-05-01',
-		EndDat: NULL,
+		EndDat: null,
 	},
 	
 	NEW_VALID_SECTION:{
@@ -377,7 +336,7 @@ module.exports =  {
 		FacultyID: 21,
 		DepartmentID: 10,
 		StartDate: '2015-05-01',
-		EndDat: NULL,
+		EndDat: null,
 	},
 	
 	//Main_branch
@@ -481,7 +440,7 @@ module.exports =  {
 	
 	OLD_VALID_HAS_FEE:{
 		FacultyGroupID: 1,
-		IsThai: TRUE,
+		IsThai: true,
 		EntryYear: 2018,
 		GradFee: 30000,
 		UndergradFee: 25000,
@@ -489,7 +448,7 @@ module.exports =  {
 	
 	NEW_VALID_HAS_FEE:{
 		FacultyGroupID: 1,
-		IsThai: FALSE,
+		IsThai: false,
 		EntryYear: 2018,
 		GradFee: 88000,
 		UndergradFee: 50000,
@@ -506,10 +465,10 @@ module.exports =  {
 		StartDate: '2015-06-01',
 		EndDate: '2015-08-01',
 		PositionNameEN: 'Backend Developer',
-		PositionNameTH: NULL,
+		PositionNameTH: null,
 		Comment: 'Good Good',
 		Rating: 10,
-		OfferID: NULL,
+		OfferID: null,
 	},
 	
 	NEW_VALID_INTENRSHIP:{
@@ -521,10 +480,10 @@ module.exports =  {
 		StartDate: '2015-07-01',
 		EndDate: '2015-08-01',
 		PositionNameEN: 'Front Developer',
-		PositionNameTH: NULL,
+		PositionNameTH: null,
 		Comment: 'very nice',
 		Rating: 8,
-		OfferID: NULL,
+		OfferID: null,
 	},
 	
 	//Eng_official_internship
