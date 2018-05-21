@@ -12,7 +12,7 @@ module.exports = (req, res) => {
             "message": "Please specify a Subject ID"
         })
     } else {
-        db.query("DELETE FROM class WHERE SubjectID = ? AND Year = ? AND Semester = ?;", [subjectid, year, semester, sectno], (err, results, fields) => {
+        db.query("DELETE FROM class WHERE SubjectID = ? AND Year = ? AND Semester = ?;", [subjectid, year, semester], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
