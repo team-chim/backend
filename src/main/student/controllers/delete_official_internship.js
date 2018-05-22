@@ -27,7 +27,7 @@ module.exports = (req, res) => {
             "message": "Please specify a Branch Name"
         })
     } else {
-        db.query("DELETE FROM internship WHERE StudentID = ? AND Year = ? AND CompanyID = ? AND BranchName = ?;", queryParams, (err, results, fields) => {
+        db.query("DELETE FROM eng_official_internship WHERE StudentID = ? AND Year = ? AND CompanyID = ? AND BranchName = ?;", queryParams, (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);

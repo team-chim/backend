@@ -43,9 +43,10 @@ router.get('/:stuid/internships/:year', require('../controllers/get_student_inte
 
 /* Student - Official Internship */
 router.get('/:stuid/official_internship', require('../controllers/get_student_official_internship')); 
+router.put('/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
+router.delete('/:stuid/official_internship', require('../controllers/delete_official_internship'));
 router.get('/:stuid/official_internship/reports', require('../controllers/get_student_reports')); 
 router.put('/:stuid/official_internship/reports', require('../controllers/put_new_student_report')); 
 router.get('/:stuid/official_internship/reports/:repno', require('../controllers/get_student_reports')); 
-router.put('/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
 
 module.exports = router
