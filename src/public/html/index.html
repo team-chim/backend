@@ -400,7 +400,7 @@
                 company (optional URL parameter: year)
             </li>
         </ul>
-    </div>
+    </div>ut
 
     <div class="parent-route-entry">
         <h3>
@@ -415,18 +415,80 @@
             <li>
                 <code>
                     <strong>PUT</strong> /v2/students/undergrad</code> - Insert a new undergrad student
+                <ul>
+                    <li>studentId</li>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>studentEmail</li>
+                    <li>advisor</li>
+                    <li>nation</li>
+                    <li>majorFaculty</li>
+                    <li>majorDepartment</li>
+                    <li>minorFaculty</li>
+                    <li>minorDepartment</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PATCH</strong> /v2/students/undergrad</code> - Update undergrad student
+                <ul>
+                    <li>studentId</li>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>studentEmail</li>
+                    <li>advisor</li>
+                    <li>nation</li>
+                    <li>majorFaculty</li>
+                    <li>majorDepartment</li>
+                    <li>minorFaculty</li>
+                    <li>minorDepartment</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PUT</strong> /v2/students/grad</code> - Insert a new grad student
+                <ul>
+                    <li>studentId</li>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>studentEmail</li>
+                    <li>advisor</li>
+                    <li>nation</li>
+                    <li>majorFaculty</li>
+                    <li>majorDepartment</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PATCH</strong> /v2/students/grad</code> - Update grad student
+                <ul>
+                    <li>studentId</li>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>studentEmail</li>
+                    <li>advisor</li>
+                    <li>nation</li>
+                    <li>majorFaculty</li>
+                    <li>majorDepartment</li>
+                    <li>minorFaculty</li>
+                    <li>minorDepartment</li>
+                </ul>
             </li>
             <li>
                 <code>
@@ -446,14 +508,33 @@
             <li>
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/registered/register</code> - Student register or add course
+                <ul>
+                    <li>subjectId</li>
+                    <li>year</li>
+                    <li>semester</li>
+                    <li>sectionNo</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/registered/withdraw</code> - Student withdraw course
+
+                <ul>
+                    <li>subjectId</li>
+                    <li>year</li>
+                    <li>semester</li>
+                    <li>sectionNo</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/registered/drop</code> - Student drop course
+                <ul>
+                    <li>subjectId</li>
+                    <li>year</li>
+                    <li>semester</li>
+                    <li>sectionNo</li>
+                </ul>
             </li>
             <li>
                 <code>
@@ -524,10 +605,22 @@
             <li>
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/payments</code> - Insert new payment on specified student ID
+                <ul>
+                    <li>year</li>
+                    <li>semester</li>
+                    <li>paymentId</li>
+                    <li>paymentDate</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PATCH</strong> v2/students/:stuid/payments</code> - Update student payment with specified student ID
+                <ul>
+                    <li>year</li>
+                    <li>semester</li>
+                    <li>paymentId</li>
+                    <li>paymentDate</li>
+                </ul>
             </li>
             <li>
                 <code>
@@ -543,11 +636,35 @@
             <li>
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/internships</code> - Insert new internships on specified student ID
+                <ul>
+                    <li>year</li>
+                    <li>companyId</li>
+                    <li>branchName</li>
+                    <li>startDate</li>
+                    <li>endDate</li>
+                    <li>positionNameEn</li>
+                    <li>positionNameTh</li>
+                    <li>comment</li>
+                    <li>rating</li>
+                    <li>offerId*</li>
+                </ul>
             </li>
             <li>
                 <code>
                     <strong>PATCH</strong> v2/students/:stuid/internships</code> - Update student's internship on specified student
                 ID
+                <ul>
+                    <li>year</li>
+                    <li>companyId</li>
+                    <li>branchName</li>
+                    <li>startDate</li>
+                    <li>endDate</li>
+                    <li>positionNameEn</li>
+                    <li>positionNameTh</li>
+                    <li>comment</li>
+                    <li>rating</li>
+                    <li>offerId*</li>
+                </ul>
             </li>
             <li>
                 <code>
@@ -570,6 +687,18 @@
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/official_internship</code> - Insert new official internship on specified
                 student ID
+                <ul>
+                        <li>year</li>
+                        <li>companyId</li>
+                        <li>branchName</li>
+                        <li>startDate</li>
+                        <li>endDate</li>
+                        <li>positionNameEn</li>
+                        <li>positionNameTh</li>
+                        <li>comment</li>
+                        <li>rating</li>
+                        <li>offerId*</li>
+                    </ul>
             </li>
             <li>
                 <code>
@@ -585,6 +714,14 @@
                 <code>
                     <strong>PUT</strong> v2/students/:stuid/official_internship/reports</code> - Insert new reports of official internship
                 on specified student ID
+                <ul>
+                    <li>year</li>
+                    <li>companyId</li>
+                    <li>branchName</li>
+                    <li>number</li>
+                    <li>date</li>
+                    <li>hours</li>
+                </ul>
             </li>
             <li>
                 <code>
