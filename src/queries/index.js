@@ -36,6 +36,8 @@ module.exports = {
 
     FIND_ALL_OFFERS: loadSql('25_find_all_offers.sql'),
     FIND_ALL_OFFERS_COMPANY: loadSql('25_find_all_offers_by_company.sql'),
+    FIND_ALL_OFFERS_YEAR: loadSql('25_find_all_offers_year.sql'),
+    FIND_ALL_OFFERS_COMPANY_YEAR: loadSql('25_find_all_offers_company_year.sql'),
 
     FIND_REVIEW_COMPANY: loadSql('26_find_review.sql'),
 
