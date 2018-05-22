@@ -200,7 +200,143 @@
     </div>
 
     <div class="parent-route-entry">
-        <h3>Students - <code>/v2/students</code></h3>
+        <h3><code>/v2/students</code> - Students</h3>
+        <h4>Students</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/students/
+                </code> - Get all students
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/students/undergrad</code> - Insert a new undergrad student
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/students/undergrad</code>
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/students/grad</code> - Insert a new grad student
+            </li>
+			<li>
+				<code><strong>PATCH</strong> /v2/students/grad</code>
+			</li>
+			<li>
+				<code><strong>GET</strong> /v2/students/:stuid</code> - Get student info
+			</li>
+			<li>
+				<code><strong>DELETE</strong> /v2/students/:stuid
+				</code> - Delete student
+        </ul>
+        <h4>Student - Course Registration</h4>
+        <ul>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/registered</code> - Get student registered course
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/registered/register</code> - Student register or add course
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/registered/withdraw</code> - Student withdraw course
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/registered/drop</code> - Student drop course
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/registered/:year</code> - Get course which student registered in specify year
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/registered/:year/:semester</code> - Get course which student registered in specify year and semester
+        	</li>
+        </ul>
+        <h4>Student - Schedules </h4>
+        <ul>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/study</code> - Get all timetable of courses that student registered
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/study/:year</code> - Get timetable of courses that student registered on specified year
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/study/:year/:semester</code> - Get timetable of courses that student registered on specified year and semester
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/final</code> - Get timetables of all final exams 
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/final/:year</code> - Get timetables of final exam on specified year
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/final/:year/:semester</code> - Get timetables of final exam on specified year and semester
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/midterm</code> - Get timetables of all midterm exam
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/midterm/:year</code> - Get timetables of midterm exam on specified year
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/schedules/midterm/:year/:semester</code> - Get timetables of midterm exam on specified year and semester
+        	</li>
+        </ul>
+        <h4>Student - Financial </h4>
+        <ul>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/fee</code> - Get tuition fee on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/payments</code> - Get all payment that student has made
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/payments</code> - Insert new payment on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>PATCH</strong> v2/students/:stuid/payments</code> 
+        	</li>
+        	<li>
+        		<code><strong>DELETE</strong> v2/students/:stuid/payments</code> - Delete payment on specified student ID
+        	</li>
+        </ul>
+        <h4>Student - Internship </h4>
+        <ul>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/internships</code> - Get internships on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/internships</code> - Insert new internships on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>PATCH</strong> v2/students/:stuid/internships</code> 
+        	</li>
+        	<li>
+        		<code><strong>DELETE</strong> v2/students/:stuid/internships</code> - Delete internships on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/internships/:year</code> - Get internships on specified student ID and year
+        	</li>
+        </ul>
+        <h4>Student - Official Internship </h4>
+        <ul>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/official_internship</code> - Get official internship on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/official_internship</code> - Insert new official internship on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>DELETE</strong> v2/students/:stuid/official_internship</code> - Delete official internship on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/official_internship/reports</code> - Get all reports of official internship on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>PUT</strong> v2/students/:stuid/official_internship/reports</code> - Insert new reports of official internship on specified student ID
+        	</li>
+        	<li>
+        		<code><strong>GET</strong> v2/students/:stuid/official_internship/reports/:repno</code> - Get report of official internship on specified student ID and report number
+        	</li>
+        	<li>
+        		<code><strong>DELETE</strong> v2/students/:stuid/official_internship/reports/:repno</code> - DELETE report of official internship on specified student ID and report number
+        	</li>
+        </ul>
     </div>
 
     <div class="parent-route-entry">
