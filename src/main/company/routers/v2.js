@@ -5,6 +5,7 @@ const router = express.Router()
 router.get('/', require('../controllers/get_companies'));
 router.put('/', require('../controllers/put_new_company'));
 router.get('/:compid', require('../controllers/get_company'));
+router.patch('/:compid', require('../controllers/patch_company'));
 router.delete('/:compid', require('../controllers/delete_company'));
 
 /* Branches */
