@@ -8,6 +8,20 @@ const compression = require('compression');
 const lowercasePaths = require('express-lowercase-paths');
 const multer = require('multer');
 
+// express static options
+// var options = {
+//     dotfiles: 'ignore',
+//     etag: true,
+//     extensions: ['htm', 'html'],
+//     index: 'index.html',
+//     lastModified: true,
+//     maxAge: '1d',
+//     setHeaders: function (res, path, stat) {
+//       res.set('x-timestamp', Date.now());
+//       res.header('Cache-Control', 'public, max-age=1d');
+//     }
+//   };
+
 // Routes
 const apiv2 = require('./routes/api.v2');
 
@@ -38,9 +52,12 @@ app.use(lowercasePaths())
 
 app.use(express.static('public'))
 
+const __htmldir = path.join(__dirname, 'public', 'html');
+
 app.get('/', (req, res) => {
-    res.send("Hello!");
+    res.sendFile(__htmldir + "/index.html");
 })
+
 
 app.use('/v1/*', (req, res) => {
     res.send("API v1 is not supported");

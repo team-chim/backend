@@ -1,7 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
+const path = require('path');
+
 const db = require('../database')
+
+const __htmldir = path.join(__dirname, '..', 'public', 'html');
+router.get('/', (req, res) => {
+    res.sendFile(__htmldir + "/index.html");
+})
+
+router.get('/help', (req, res) => {
+    res.sendFile(__htmldir + "/index.html");
+})
 
 router.get('/test', (req, res) => {
     res.status(200).send({
