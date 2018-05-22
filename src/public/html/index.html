@@ -11,31 +11,82 @@
     <hr />
 
     <div class="parent-route-entry">
-        <code>/v2/academic</code> - Academic year and semester
+        <h3>Academic year and semester - <code>/v2/academic</code></h3>
+        
+        <h4>Academic Year</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/academic/years</code> - Get all academic years
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/academic/years</code> - Insert a new academic year
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/academic/years/:year</code> - Get the specified academic year
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/academic/years/:year</code> - Delete the specified academic year
+            </li>
+        </ul>
+
+        <h4>Academic Semester</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/academic/years/:year/semesters</code>
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/academic/years/:year/semesters</code>
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/academic/years/:year/semesters/:semester</code>
+            </li>
+            <li>
+                <code><strong>PATCH</strong>  /v2/academic/years/:year/semesters/:semester</code>
+            </li>
+            <li>
+                <code><strong>DELETE</strong>  /v2/academic/years/:year/semesters/:semester</code>
+            </li>
+        </ul>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/students</code> - Students 
+        <h3><code>/v2/students</code> - Students</h3>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/subjects</code> - Subject and Sections
+        <h3><code>/v2/subjects</code> - Subject and Sections</h3>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/teachers</code> - Teachers
+        <h3><code>/v2/teachers</code> - Teachers</h3>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/faculties</code> - Faculties and Departments
+        <h3><code>/v2/faculties</code> - Faculties and Departments</h3>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/faculty_groups</code> - Faculty Groups
+        <h3><code>/v2/faculty_groups</code> - Faculty Groups</h3>
     </div>
 
     <div class="parent-route-entry">
-        <code>/v2/companies</code> - Companies and Branches
+            <h3>Companies and Branches - <code>/v2/companies</code></h3>
+        
+            <h4>Academic Year</h4>
+            <ul>
+                <li>
+                    <code><strong>GET</strong> /v2/academic/years</code> - Get all academic years
+                </li>
+                <li>
+                    <code><strong>PUT</strong> /v2/academic/years</code> - Insert a new academic year
+                </li>
+                <li>
+                    <code><strong>GET</strong> /v2/academic/years/:year</code> - Get the specified academic year
+                </li>
+                <li>
+                    <code><strong>DELETE</strong> /v2/academic/years/:year</code> - Delete the specified academic year
+                </li>
+            </ul>
     </div>
 
 </body>
