@@ -50,70 +50,124 @@
     </div>
 
     <div class="parent-route-entry">
-            <h3>Companies and Branches - <code>/v2/companies</code></h3>
-        
-            <h4>Company</h4>
-            <ul>
-                <li>
-                    <code><strong>GET</strong> /v2/companies</code> - Get all companies
-                </li>
-                <li>
-                    <code><strong>PUT</strong> /v2/companies</code> - Insert a new company
-                </li>
-                <li>
-                    <code><strong>GET</strong> /v2/companies/:compid</code> - Get the specified company
-                </li>
-                <li>
-                    <code><strong>PATCH</strong> /v2/companies/:compid</code> - Update the specified company
-                </li>
-                <li>
-                    <code><strong>DELETE</strong> /v2/companies/:compid</code> - Delete the specified company
-                </li>
-            </ul>
+        <h3>Companies and Branches - <code>/v2/companies</code></h3>
+    
+        <h4>Company</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/companies</code> - Get all companies
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/companies</code> - Insert a new company
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/companies/:compid</code> - Get the specified company
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/companies/:compid</code> - Update the specified company
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/companies/:compid</code> - Delete the specified company
+            </li>
+        </ul>
 
-            <h4>Branch</h4>
-            <ul>
-                <li>
-                    <code><strong>GET</strong> /v2/companies/:compid/branches</code> - Get all branches of the specified company
-                </li>
-                <li>
-                    <code><strong>PUT</strong> /v2/companies/:compid/branches</code> - Insert a new branch for the specified company
-                </li>
-                <li>
-                    <code><strong>GET</strong> /v2/companies/:compid/branches/:brid</code> - Get the specified branch
-                </li>
-                <li>
-                    <code><strong>PATCH</strong> /v2/companies/:compid/branches/:brid</code> - Update the specified branch
-                </li>
-                <li>
-                    <code><strong>DELETE</strong> /v2/companies/:compid/branches/:brid</code> - Delete the specified branch
-                </li>
-                <li>
-                    <code><strong>GET</strong> /v2/companies/:compid/reviews</code> - Get reviews associated with the specified company
-                </li>
-            </ul>
+        <h4>Branch</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/companies/:compid/branches</code> - Get all branches of the specified company
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/companies/:compid/branches</code> - Insert a new branch for the specified company
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/companies/:compid/branches/:brid</code> - Get the specified branch
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/companies/:compid/branches/:brid</code> - Update the specified branch
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/companies/:compid/branches/:brid</code> - Delete the specified branch
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/companies/:compid/reviews</code> - Get reviews associated with the specified company
+            </li>
+        </ul>
     </div>
 
     <div class="parent-route-entry">
-        <h3><code>/v2/students</code> - Students</h3>
+        <h3>Faculties and Departments - <code>/v2/faculties</code></h3>
+
+        <h4>Faculty</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/faculties</code> - Get all faculties
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/faculties</code> - Insert a new faculty
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/faculties/:fid</code> - Get the specified faculty 
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/faculties/:fid</code> - Update the specified faculty
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/faculties/:fid</code> - Delete the specified faculty
+            </li>
+        </ul>
+
+        <h4>Departments</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/faculties/:fid/departments</code> - Get all departments that belong to the specified faculty
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/faculties/:fid/departments</code> - Insert a new department for the specified faculty
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/faculties/:fid/departments/:depid</code> - Get the specified department 
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/faculties/:fid/departments/:depid</code> - Update the specified department
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/faculties/:fid/departments/:depid</code> - Delete the specified department
+            </li>
+        </ul>
+
+        <h4>Head of Department</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/faculties/:fid/departments/:depid/head</code> - Get the head of department of the specified department
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/faculties/:fid/departments/:depid/head</code> - Insert a new head of department for the specified department
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/faculties/:fid/departments/:depid/head</code> - Update the head of department of the specified department
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/faculties/:fid/departments/:depid/head</code> - Delete the head of department of the specified department
+            </li>
+        </ul>
+
     </div>
 
     <div class="parent-route-entry">
-        <h3><code>/v2/subjects</code> - Subject and Sections</h3>
+        <h3>Faculty Groups - <code>/v2/faculty_groups</code></h3>
     </div>
 
     <div class="parent-route-entry">
-        <h3><code>/v2/teachers</code> - Teachers</h3>
+        <h3>Students - <code>/v2/students</code></h3>
     </div>
 
     <div class="parent-route-entry">
-        <h3><code>/v2/faculties</code> - Faculties and Departments</h3>
+        <h3>Subject and Sections - <code>/v2/subjects</code></h3>
     </div>
 
     <div class="parent-route-entry">
-        <h3><code>/v2/faculty_groups</code> - Faculty Groups</h3>
+        <h3>Teachers - <code>/v2/teachers</code></h3>
     </div>
-
 
 </body>
 </html>
