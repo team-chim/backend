@@ -2,34 +2,6 @@
 const db = require('../database')
 
 module.exports =  {
-
-    // Company
-	
-	OLD_VALID_COMPANY: {
-		NameEN: 'AIS',
-		NameTH: 'แอดวานซ์ อินโฟร์ เซอร์วิส'
-	},
-	
-	NEW_VALID_COMPANY: {
-		NameEN: 'Exxon Mobil',
-		NameTH: 'เอ็กซอนโมบิล คอร์ปอเรชั่น'
-	},
-
-	// Faculty_Group
-	EXIST_FACULTY_GROUP: 1,
-    NON_EXIST_FACULTY_GROUP: 9,
-	
-	OLD_VALID_FACULTY_GROUP: {
-		FacultyGroupID: '15',
-		NameEN: 'Group 15',
-		NameTH: 'กลุ่ม 15'
-	},
-	
-	NEW_VALID_FACULTY_GROUP: {
-		FacultyGroupID: '20',
-		NameEN: 'Group 20',
-		NameTH: 'กลุ่ม 20'
-	},
 	
 	// Faculties
     EXIST_FACULTY: 21,
@@ -227,32 +199,6 @@ module.exports =  {
 		StatedSalary: '1000',
 		OtherBenefits: null,
 		ExpiryDate: '2014-02-01',
-	},
-
-	//Company_branch
-	
-	OLD_VALID_COMPANY_BRANCH:{
-		CompanyID: '1',
-		BranchName: 'Pinklao',
-		Manager: 'Jon Doe',
-		TelNo: '000-111-000-0',
-		Address: '111/2 Phar Pinklao rd.',
-		City: 'Pinklao',
-		State: 'Taling chan',
-		PostalCode: '10113',
-		Country: 'Thailand',
-	},
-	
-	NEW_VALID_COMPANY_BRANCH:{
-		CompanyID: '1',
-		BranchName: 'Moonlake',
-		Manager: 'John Hiddle',
-		TelNo: '000-000-000-0',
-		Address: '111/2 Moonlake rd.',
-		City: 'Moon',
-		State: 'Lake',
-		PostalCode: '999999',
-		Country: 'Moomoo',
 	},
 	
 	//Payment
