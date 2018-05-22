@@ -39,13 +39,16 @@ router.delete('/:stuid/payments', require('../controllers/delete_payment'));
 /* Student - Internship */
 router.get('/:stuid/internships', require('../controllers/get_student_internships'));
 router.put('/:stuid/internships', require('../controllers/put_new_internship'));
+router.delete('/:stuid/internships', require('../controllers/delete_internship'));
 router.get('/:stuid/internships/:year', require('../controllers/get_student_internships'));
 
 /* Student - Official Internship */
 router.get('/:stuid/official_internship', require('../controllers/get_student_official_internship')); 
+router.put('/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
+router.delete('/:stuid/official_internship', require('../controllers/delete_official_internship'));
 router.get('/:stuid/official_internship/reports', require('../controllers/get_student_reports')); 
 router.put('/:stuid/official_internship/reports', require('../controllers/put_new_student_report')); 
 router.get('/:stuid/official_internship/reports/:repno', require('../controllers/get_student_reports')); 
-router.put('/:stuid/official_internship', require('../controllers/put_new_student_official_internship')); 
+router.delete('/:stuid/official_internship/reports/:repno', require('../controllers/delete_student_report')); 
 
 module.exports = router
