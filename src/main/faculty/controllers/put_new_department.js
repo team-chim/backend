@@ -23,9 +23,9 @@ module.exports = (req, res) => {
             "message": "Please specify department ID"
         })
     }
-    if (!newDepartment.NameEN || !newDepartment.NameTH) {
+    if (!newDepartment.NameEN) {
         res.status(422).send({
-            "message": "Please specify department names"
+            "message": "Please specify english department name"
         })
     } else {
         db.query(SQL.CREATE_NEW_DEPARTMENT, newDepartment, (err, results, fields) => {

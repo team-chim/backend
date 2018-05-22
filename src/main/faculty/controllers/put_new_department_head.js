@@ -18,11 +18,21 @@ module.exports = (req, res) => {
         res.status(422).send({
             "message": "Please specify teacher ID"
         })
-    } 
-    if (!newManagementship.FacultyID) {
+    } if (!newManagementship.FacultyID) {
         res.status(422).send({
             "message": "Please specify faculty ID"
         })
+    
+    } if (!newManagementship.DepartmentID) {
+        res.status(422).send({
+            "message": "Please specify department ID"
+        })
+    
+    } if (!newManagementship.StartDate) {
+        res.status(422).send({
+            "message": "Please specify start date"
+        })
+    
     } else {
         db.query(SQL.CREATE_NEW_DEPARTMENT_HEAD, newManagementship, (err, results, fields) => {
             if (err) {

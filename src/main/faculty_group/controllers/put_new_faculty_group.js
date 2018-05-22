@@ -14,6 +14,10 @@ module.exports = (req, res) => {
         res.status(422).send({
             "message": "Please specify faculty group ID"
         })
+    } if (!newFacultyGroup.NameEn) {
+        res.status(422).send({
+            "message": "Please specify english faculty group name"
+        })
     } else {
         db.query(SQL.CREATE_NEW_FACULTY_GROUP, newFacultyGroup, (err, results, fields) => {
             if (err) {

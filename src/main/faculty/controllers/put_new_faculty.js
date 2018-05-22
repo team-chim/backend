@@ -17,13 +17,9 @@ module.exports = (req, res) => {
         res.status(422).send({
             "message": "Please specify faculty ID"
         })
-    } else if (!newFaculty.NameEN || !newFaculty.NameTH) {
+    } else if (!newFaculty.NameEN) {
         res.status(422).send({
-            "message": "Please specify faculty names"
-        })
-    } else if (!newFaculty.TelNo) {
-        res.status(422).send({
-            "message": "Please specify telephone number"
+            "message": "Please specify english faculty"
         })
     } else if (!newFaculty.BelongsTo) {
         res.status(422).send({
