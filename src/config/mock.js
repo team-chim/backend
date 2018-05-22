@@ -3,6 +3,18 @@ const db = require('../database')
 
 module.exports =  {
 
+    // Company
+	
+	OLD_VALID_COMPANY: {
+		NameEN: 'AIS',
+		NameTH: 'แอดวานซ์ อินโฟร์ เซอร์วิส'
+	},
+	
+	NEW_VALID_COMPANY: {
+		NameEN: 'Exxon Mobil',
+		NameTH: 'เอ็กซอนโมบิล คอร์ปอเรชั่น'
+	},
+
 	// Faculty_Group
 	EXIST_FACULTY_GROUP: 1,
     NON_EXIST_FACULTY_GROUP: 9,
@@ -39,7 +51,7 @@ module.exports =  {
 		BelongsTo: '2'
 	},
 	
-	// Nationality
+	//Nationality
 	
 	OLD_VALID_NATIONALITY: {
 		NationName: 'Wakanda'
@@ -49,7 +61,7 @@ module.exports =  {
 		NationName: 'Autralian'
 	},
 	
-	// Subject
+	//Subject
 	
 	OLD_VALID_SUBJECT: {
 		SubjectID: '2201123',
@@ -67,7 +79,7 @@ module.exports =  {
 		Credit: 3
 	},
 	
-	// Department
+	//Department
 	
 	OLD_VALID_DEPARTMENT:{
 		FacultyID: '21',
@@ -185,7 +197,7 @@ module.exports =  {
         });
     },
     
-	// Internship_offer
+	//Internship_offer
 	
 	OLD_INTERNSHIP_OFFER:{
 		CompanyID: 1,
@@ -216,8 +228,34 @@ module.exports =  {
 		OtherBenefits: null,
 		ExpiryDate: '2014-02-01',
 	},
+
+	//Company_branch
 	
-	// Payment
+	OLD_VALID_COMPANY_BRANCH:{
+		CompanyID: '1',
+		BranchName: 'Pinklao',
+		Manager: 'Jon Doe',
+		TelNo: '000-111-000-0',
+		Address: '111/2 Phar Pinklao rd.',
+		City: 'Pinklao',
+		State: 'Taling chan',
+		PostalCode: '10113',
+		Country: 'Thailand',
+	},
+	
+	NEW_VALID_COMPANY_BRANCH:{
+		CompanyID: '1',
+		BranchName: 'Moonlake',
+		Manager: 'John Hiddle',
+		TelNo: '000-000-000-0',
+		Address: '111/2 Moonlake rd.',
+		City: 'Moon',
+		State: 'Lake',
+		PostalCode: '999999',
+		Country: 'Moomoo',
+	},
+	
+	//Payment
 	
 	OLD_VALID_PAYMENT: {
 		StudentID: '5732671526',
@@ -237,7 +275,7 @@ module.exports =  {
 		PaymentDate: '2016-07-20',
 	},
 	
-	// Class
+	//Class
 	
 	OLD_VALID_CLASS: {
 		SubjectID: '2301103',
@@ -259,7 +297,7 @@ module.exports =  {
 		FinalEndDatetime: '2017-05-20 16:00:00',
 	},
 	
-	// Section
+	//Section
 	
 	OLD_VALID_SECTION:{
 		SubjectID: '2301103',
@@ -283,7 +321,7 @@ module.exports =  {
 		TeachedBy: '0123456789',
 	},
 	
-	// Managementship
+	//Managementship
 	
 	OLD_VALID_SECTION:{
 		TeacherID: '0010013658',
@@ -301,7 +339,7 @@ module.exports =  {
 		EndDat: null,
 	},
 	
-	// Main_branch
+	//Main_branch
 	
 	OLD_VALID_MAIN_BRANCH:{
 		CompanyID: 1,
@@ -313,7 +351,7 @@ module.exports =  {
 		BranchName: 'Central World',
 	},
 	
-	// Subject_requires
+	//Subject_requires
 	
 	OLD_VALID_SUBJECT_REQUIRES:{
 		SubjectID: '2302112',
@@ -325,7 +363,7 @@ module.exports =  {
 		ReqSubjectID: '2302113',
 	},
 	
-	// Internship_to_department
+	//Internship_to_department
 	
 	OLD_VALID_INTENRSHIP_TO_DEPARTMENT:{
 		CompanyID: 4,
@@ -343,7 +381,7 @@ module.exports =  {
 		DepartmentID: 10,
 	},
 	
-	// Studies
+	//Studies
 	
 	OLD_VALID_STUDIES:{
 		StudentID: '5732831021',
@@ -363,7 +401,7 @@ module.exports =  {
 		Grade: 'B',
 	},
 	
-	// Company_Industries
+	//Company_Industries
 	
 	OLD_VALID_COMPANY_INDUSTRIES:{
 		CompanyID: 1,
@@ -375,7 +413,7 @@ module.exports =  {
 		Industry: 'Agriculture',
 	},
 	
-	// Section_Datetime
+	//Section_Datetime
 	
 	OLD_VALID_SECTION_DATETIME:{
 		Year: 2016,
@@ -398,7 +436,7 @@ module.exports =  {
 	},
 	
 	
-	// Has_fee
+	//Has_fee
 	
 	OLD_VALID_HAS_FEE:{
 		FacultyGroupID: 1,
@@ -416,7 +454,7 @@ module.exports =  {
 		UndergradFee: 50000,
 	},
 	
-	// Internship
+	//Internship
 	
 	OLD_VALID_INTENRSHIP:{
 		StudentID: '5730123421',
@@ -448,7 +486,7 @@ module.exports =  {
 		OfferID: null,
 	},
 	
-	// Eng_official_internship
+	//Eng_official_internship
 	
 	OLD_VALID_ENG_OFFICIAL_INTERNSHIP:{
 		StudentID: '5730098721',
@@ -464,5 +502,24 @@ module.exports =  {
 		BranchName: 2,
 	},
 	
+	//Report
+	
+	OLD_VALID_REPORT:{
+		StudentID: '5730000021 ',
+		Year: 2016,
+		CompanyID: 3,
+		BranchName: 1,
+		Number: 1,
+		Date: '2017-06-14',
+	},
+	
+	NEW_VALID_REPORT:{
+		StudentID: '5730000021 ',
+		Year: 2016,
+		CompanyID: 3,
+		BranchName: 1,
+		Number: 1,
+		Date: '2017-06-15',
+	},
 	
 }
