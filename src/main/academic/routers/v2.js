@@ -11,6 +11,7 @@ router.delete('/years/:year', require('../controllers/delete_academic_year'));
 router.get('/years/:year/semesters', require('../controllers/get_academic_semesters'));
 router.put('/years/:year/semesters', require('../controllers/put_new_academic_semester'));
 router.get('/years/:year/semesters/:semester', require('../controllers/get_academic_semesters'));
+router.patch('/years/:year/semesters/:semester', require('../controllers/patch_academic_semester'));
 router.delete('/years/:year/semesters/:semester', require('../controllers/delete_academic_semester'));
 
 module.exports = router
