@@ -21,13 +21,23 @@ module.exports = (req, res) => {
                 res.sendStatus(404);
             } else {
                 if (results.length > 0) {
-                    db.query(SQL.FIND_COMPANY_BRANCHES, [companyid], (err, branches, fields) => {
+
+                    let company = results[0];
+
+                    db.query("SELECT `Industry` FROM company_industries WHERE `CompanyID` = ?;", companyid, (err, industries, fields) => {
                         if (err) {
                             console.log(err);
                             res.sendStatus(500);
                         } else {
-                            results.branches = branches;
-                            res.send(results);
+                            db.query(SQL.FIND_COMPANY_BRANCHES, [companyid], (err, branches, fields) => {
+                                if (err) {
+                                    console.log(err);
+                                    res.sendStatus(500);
+                                } else {
+                                    company.branches = branches;
+                                    res.send(company);
+                                }
+                            })
                         }
                     })
                 } else {
