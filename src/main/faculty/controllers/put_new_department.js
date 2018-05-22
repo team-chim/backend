@@ -8,9 +8,9 @@ module.exports = (req, res) => {
     // Must match DB
     let newDepartment = {
         FacultyID: facultyId,
-        DepartmentID: req.body.departmentId,
-        NameEN: req.body.nameEn,
-        NameTH: req.body.nameTh,
+        DepartmentID: req.body.departmentId || req.body.departmentid || req.body.depid,
+        NameEN: req.body.nameEn || req.body.nameen,
+        NameTH: req.body.nameTh || req.body.nameth,
     }
 
     if (!newDepartment.FacultyID) {
@@ -23,9 +23,9 @@ module.exports = (req, res) => {
             "message": "Please specify department ID"
         })
     }
-    if (!newDepartment.NameEN || !newDepartment.NameTH) {
+    if (!newDepartment.NameEN) {
         res.status(422).send({
-            "message": "Please specify department names"
+            "message": "Please specify english department name"
         })
     } else {
         db.query(SQL.CREATE_NEW_DEPARTMENT, newDepartment, (err, results, fields) => {

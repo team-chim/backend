@@ -6,7 +6,7 @@ const SQL = require('../../../queries/index');
 module.exports = (req, res) => {
     let fid = req.params.fid;
     let depid = req.params.depid;
-    let tid = req.body.teacherId || req.body.tid;
+    let tid = req.body.teacherId || req.body.tid || req.body.teacherid;
     let startdate = req.body.startDate || req.body.startdate;
     let enddate = req.body.endDate || req.body.enddate
 

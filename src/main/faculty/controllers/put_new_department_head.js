@@ -8,21 +8,31 @@ module.exports = (req, res) => {
 
     // Must match DB
     let newManagementship = {
-        TeacherID: req.body.teacherId,
+        TeacherID: req.body.teacherId || req.body.teacherid || req.body.tid,
         FacultyID: facultyId,
         DepartmentID: departmentId,
-        StartDate: req.body.startDate,
+        StartDate: req.body.startDate || req.body.startdate,
     }
 
     if (!newManagementship.TeacherID) {
         res.status(422).send({
             "message": "Please specify teacher ID"
         })
-    } 
-    if (!newManagementship.FacultyID) {
+    } if (!newManagementship.FacultyID) {
         res.status(422).send({
             "message": "Please specify faculty ID"
         })
+    
+    } if (!newManagementship.DepartmentID) {
+        res.status(422).send({
+            "message": "Please specify department ID"
+        })
+    
+    } if (!newManagementship.StartDate) {
+        res.status(422).send({
+            "message": "Please specify start date"
+        })
+    
     } else {
         db.query(SQL.CREATE_NEW_DEPARTMENT_HEAD, newManagementship, (err, results, fields) => {
             if (err) {

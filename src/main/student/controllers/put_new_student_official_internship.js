@@ -9,23 +9,23 @@ module.exports = (req, res) => {
 
     let newEngOfficialInternship = {
         StudentID:      studentId,
-        Year:           req.body.year,
-        CompanyID:      req.body.companyId,
-        BranchName:     req.body.branchName,
+        Year:           req.body.year || req.body.year,
+        CompanyID:      req.body.companyId || req.body.compid || req.body.companyID,
+        BranchName:     req.body.branchName || req.body.branchname,
     }
     let newInternship = {
         StudentID: req.params.stuid,
-        Year: req.body.year,
-        CompanyID: req.body.companyid || req.body.companyId,
+        Year: req.body.year || req.body.year,
+        CompanyID: req.body.companyid || req.body.companyId || req.body.compid,
         BranchName: req.body.branchname || req.body.branchName,
         Status: 'Pending', 
         StartDate: req.body.startdate || req.body.StartDate,
         EndDate: req.body.enddate || req.body.EndDate,
-        PositionNameEN: req.body.positionNameEn,
-        PositionNameTH: req.body.positionNameTh,
+        PositionNameEN: req.body.positionNameEn || req.body.positionnameen,
+        PositionNameTH: req.body.positionNameTh || req.body.positionnameth,
         Comment: req.body.comment,
         Rating: req.body.rating,
-        OfferID: req.body.offerId || req.body.offerid,
+        OfferID: req.body.offerId || req.body.offerid || req.body.offerID,
     }
 
     if (!newEngOfficialInternship.StudentID) {
