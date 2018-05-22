@@ -1,307 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DB Backend Index</title>
+    <style>
+        td,
+        th {
+            border: 1px solid #111111;
+            border-style: dashed;
+            text-align: left;
+            padding: 8px;
+            font-size: 15px;
+        }
+
+        tr:nth-child(even) {
+            /*            background-color: #dddddd;*/
+        }
+
+        table {
+            font-family: sans-serif;
+            border-collapse: collapse;
+            /*            border-style: dashed;*/
+            border: 1px dashed #111111;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <h1>DB Backend Index</h1>
     <hr />
 
     <div class="parent-route-entry">
-        <h3>Academic year and semester - <code>/v2/academic</code></h3>
-        
+        <h3>Academic year and semester -
+            <code>/v2/academic</code>
+        </h3>
+
         <h4>Academic Year</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/academic/years</code> - Get all academic years
+                <code>
+                    <strong>GET</strong> /v2/academic/years</code> - Get all academic years
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/academic/years</code> - Insert a new academic year
+                <code>
+                    <strong>PUT</strong> /v2/academic/years</code> - Insert a new academic year
             </li>
             <li>
-                <code><strong>GET</strong> /v2/academic/years/:year</code> - Get the specified academic year
+                <code>
+                    <strong>GET</strong> /v2/academic/years/:year</code> - Get the specified academic year
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/academic/years/:year</code> - Delete the specified academic year
+                <code>
+                    <strong>DELETE</strong> /v2/academic/years/:year</code> - Delete the specified academic year
             </li>
-        </ul>
 
+        </ul>
         <h4>Academic Semester</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/academic/years/:year/semesters</code> - Get all semesters of the specified academic year
+                <code>
+                    <strong>GET</strong> /v2/academic/years/:year/semesters</code> - Get all semesters of the specified academic
+                year
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/academic/years/:year/semesters</code> - Insert a new semester for the specified academic year
+                <code>
+                    <strong>PUT</strong> /v2/academic/years/:year/semesters</code> - Insert a new semester for the specified academic
+                <ul>
+                    <li>semester semesterStartDate semesterEndDate registerStartDate registerEndDate droppingStartDate droppingEndDate
+                        withdrawStartDate withdrawEndDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/academic/years/:year/semesters/:semester</code> - Get the specified semester
+                <code>
+                    <strong>GET</strong> /v2/academic/years/:year/semesters/:semester</code> - Get the specified semester
             </li>
             <li>
-                <code><strong>PATCH</strong>  /v2/academic/years/:year/semesters/:semester</code> - Update the specified semester`
+                <code>
+                    <strong>PATCH</strong> /v2/academic/years/:year/semesters/:semester</code> - Update the specified semester`
+                <ul>
+                    <li>semester semesterStartDate semesterEndDate registerStartDate registerEndDate droppingStartDate droppingEndDate
+                        withdrawStartDate withdrawEndDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong>  /v2/academic/years/:year/semesters/:semester</code> - Delete the specified semester
+                <code>
+                    <strong>DELETE</strong> /v2/academic/years/:year/semesters/:semester</code> - Delete the specified semester
             </li>
         </ul>
     </div>
 
     <div class="parent-route-entry">
-        <h3>Companies and Branches - <code>/v2/companies</code></h3>
-    
+        <h3>Companies and Branches -
+            <code>/v2/companies</code>
+        </h3>
+
         <h4>Company</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/companies</code> - Get all companies
+                <code>
+                    <strong>GET</strong> /v2/companies</code> - Get all companies
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/companies</code> - Insert a new company
+                <code>
+                    <strong>PUT</strong> /v2/companies</code> - Insert a new company
+                <ul>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/companies/:compid</code> - Get the specified company
+                <code>
+                    <strong>GET</strong> /v2/companies/:compid</code> - Get the specified company
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/companies/:compid</code> - Update the specified company
+                <code>
+                    <strong>PATCH</strong> /v2/companies/:compid</code> - Update the specified company
+                <ul>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/companies/:compid</code> - Delete the specified company
+                <code>
+                    <strong>DELETE</strong> /v2/companies/:compid</code> - Delete the specified company
             </li>
         </ul>
 
         <h4>Branch</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/companies/:compid/branches</code> - Get all branches of the specified company
+                <code>
+                    <strong>GET</strong> /v2/companies/:compid/branches</code> - Get all branches of the specified company
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/companies/:compid/branches</code> - Insert a new branch for the specified company
+                <code>
+                    <strong>PUT</strong> /v2/companies/:compid/branches</code> - Insert a new branch for the specified company
+                <ul>
+                    <li>branchName</li>
+                    <li>manager</li>
+                    <li>telNo</li>
+                    <li>address</li>
+                    <li>city</li>
+                    <li>state</li>
+                    <li>postalCode</li>
+                    <li>country</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/companies/:compid/branches/:brid</code> - Get the specified branch
+                <code>
+                    <strong>GET</strong> /v2/companies/:compid/branches/:brid</code> - Get the specified branch
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/companies/:compid/branches/:brid</code> - Update the specified branch
+                <code>
+                    <strong>PATCH</strong> /v2/companies/:compid/branches/:brid</code> - Update the specified branch
+                <ul>
+                    <li>manager</li>
+                    <li>telNo</li>
+                    <li>address</li>
+                    <li>city</li>
+                    <li>state</li>
+                    <li>postalCode</li>
+                    <li>country</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/companies/:compid/branches/:brid</code> - Delete the specified branch
+                <code>
+                    <strong>DELETE</strong> /v2/companies/:compid/branches/:brid</code> - Delete the specified branch
             </li>
             <li>
-                <code><strong>GET</strong> /v2/companies/:compid/reviews</code> - Get reviews associated with the specified company
+                <code>
+                    <strong>GET</strong> /v2/companies/:compid/reviews</code> - Get reviews associated with the specified company
             </li>
         </ul>
     </div>
 
     <div class="parent-route-entry">
-        <h3>Faculties and Departments - <code>/v2/faculties</code></h3>
+        <h3>Faculties and Departments -
+            <code>/v2/faculties</code>
+        </h3>
 
         <h4>Faculty</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/faculties</code> - Get all faculties
+                <code>
+                    <strong>GET</strong> /v2/faculties</code> - Get all faculties
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/faculties</code> - Insert a new faculty
+                <code>
+                    <strong>PUT</strong> /v2/faculties</code> - Insert a new faculty
+                <ul>
+                    <li>facultyID</li>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                    <li>telNo</li>
+                    <li>belongsTo</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/faculties/:fid</code> - Get the specified faculty 
+                <code>
+                    <strong>GET</strong> /v2/faculties/:fid</code> - Get the specified faculty
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/faculties/:fid</code> - Update the specified faculty
+                <code>
+                    <strong>PATCH</strong> /v2/faculties/:fid</code> - Update the specified faculty
+                <ul>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                    <li>telNo</li>
+                    <li>belongsTo</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/faculties/:fid</code> - Delete the specified faculty
+                <code>
+                    <strong>DELETE</strong> /v2/faculties/:fid</code> - Delete the specified faculty
             </li>
         </ul>
 
         <h4>Departments</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/faculties/:fid/departments</code> - Get all departments that belong to the specified faculty
+                <code>
+                    <strong>GET</strong> /v2/faculties/:fid/departments</code> - Get all departments that belong to the specified
+                faculty
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/faculties/:fid/departments</code> - Insert a new department for the specified faculty
+                <code>
+                    <strong>PUT</strong> /v2/faculties/:fid/departments</code> - Insert a new department for the specified faculty
+                <ul>
+                    <li>departmentID</li>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/faculties/:fid/departments/:depid</code> - Get the specified department 
+                <code>
+                    <strong>GET</strong> /v2/faculties/:fid/departments/:depid</code> - Get the specified department
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/faculties/:fid/departments/:depid</code> - Update the specified department
+                <code>
+                    <strong>PATCH</strong> /v2/faculties/:fid/departments/:depid</code> - Update the specified department
+                <ul>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/faculties/:fid/departments/:depid</code> - Delete the specified department
+                <code>
+                    <strong>DELETE</strong> /v2/faculties/:fid/departments/:depid</code> - Delete the specified department
             </li>
         </ul>
 
         <h4>Head of Department</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/faculties/:fid/departments/:depid/head</code> - Get the head of department of the specified department
+                <code>
+                    <strong>GET</strong> /v2/faculties/:fid/departments/:depid/head</code> - Get the head of department of the specified
+                department
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/faculties/:fid/departments/:depid/head</code> - Insert a new head of department for the specified department
+                <code>
+                    <strong>PUT</strong> /v2/faculties/:fid/departments/:depid/head</code> - Insert a new head of department for
+                the specified department
+                <ul>
+                    <li>teacherId</li>
+                    <li>startDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/faculties/:fid/departments/:depid/head</code> - Update the head of department of the specified department
+                <code>
+                    <strong>PATCH</strong> /v2/faculties/:fid/departments/:depid/head</code> - Update the head of department of the
+                specified department
+                <ul>
+                    <li>teacherId</li>
+                    <li>startDate</li>
+                    <li>endDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/faculties/:fid/departments/:depid/head</code> - Delete the head of department of the specified department
+                <code>
+                    <strong>DELETE</strong> /v2/faculties/:fid/departments/:depid/head</code> - Delete the head of department of
+                the specified department
             </li>
         </ul>
 
     </div>
 
     <div class="parent-route-entry">
-        <h3>Faculty Groups - <code>/v2/faculty_groups</code></h3>
+        <h3>Faculty Groups -
+            <code>/v2/faculty_groups</code>
+        </h3>
 
         <h4>Faculty Group</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/faculty_group</code> - Get all faculties groups
+                <code>
+                    <strong>GET</strong> /v2/faculty_group</code> - Get all faculties groups
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/faculty_group</code> - Insert a new faculty group
+                <code>
+                    <strong>PUT</strong> /v2/faculty_group</code> - Insert a new faculty group
+                <ul>
+                    <li>fgid</li>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/faculty_group/:fgid</code> - Get the specified faculty group details
+                <code>
+                    <strong>GET</strong> /v2/faculty_group/:fgid</code> - Get the specified faculty group details
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/faculty_group/:fgid</code> - Update the specified faculty group
+                <code>
+                    <strong>PATCH</strong> /v2/faculty_group/:fgid</code> - Update the specified faculty group
+                <ul>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/faculty_group/:fgid</code> - Delete the specified faculty groups
+                <code>
+                    <strong>DELETE</strong> /v2/faculty_group/:fgid</code> - Delete the specified faculty groups
             </li>
         </ul>
     </div>
 
     <div class="parent-route-entry">
-        <h3>Offers - <code>/v2/internship/offers</code></h3>
+        <h3>Offers -
+            <code>/v2/internship/offers</code>
+        </h3>
 
         <h4>Offer</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/internship/offers</code> - Get all internship offers (optional URL parameter: year)
+                <code>
+                    <strong>GET</strong> /v2/internship/offers</code> - Get all internship offers (optional URL parameter: year)
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/internship/offers</code> - Insert a new internship offer
+                <code>
+                    <strong>PUT</strong> /v2/internship/offers</code> - Insert a new internship offer
+                <ul>
+                    <li>companyId</li>
+                    <li>year</li>
+                    <li>positionNameEn</li>
+                    <li>positionNameTh</li>
+                    <li>positionDescriptionEn</li>
+                    <li>positionDescriptionTh</li>
+                    <li>numberOfPosition</li>
+                    <li>otherRequirements</li>
+                    <li>statedMinimumGrade</li>
+                    <li>statedSalary</li>
+                    <li>otherBenefits</li>
+                    <li>expiryDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/internship/offers</code> - Update the specified internship offer
+                <code>
+                    <strong>PATCH</strong> /v2/internship/offers</code> - Update the specified internship offer
+                <ul>
+                    <li>offerId</li>
+                    <li>companyId</li>
+                    <li>year</li>
+                    <li>positionNameEn</li>
+                    <li>positionNameTh</li>
+                    <li>positionDescriptionEn</li>
+                    <li>positionDescriptionTh</li>
+                    <li>numberOfPosition</li>
+                    <li>otherRequirements</li>
+                    <li>statedMinimumGrade</li>
+                    <li>statedSalary</li>
+                    <li>otherBenefits</li>
+                    <li>expiryDate</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/internship/offers</code> - Delete the specified internship offer
+                <code>
+                    <strong>DELETE</strong> /v2/internship/offers</code> - Delete the specified internship offer
             </li>
             <li>
-                <code><strong>GET</strong> /v2/internship/offers/:compid</code> - Get all internship offers that belong to the specified company (optional URL parameter: year)
+                <code>
+                    <strong>GET</strong> /v2/internship/offers/:compid</code> - Get all internship offers that belong to the specified
+                company (optional URL parameter: year)
             </li>
         </ul>
     </div>
 
     <div class="parent-route-entry">
-        <h3>Students - <code>/v2/students</code></h3>
+        <h3>Students -
+            <code>/v2/students</code>
+        </h3>
     </div>
 
     <div class="parent-route-entry">
-        <h3>Subject and Sections - <code>/v2/subjects</code></h3>
+        <h3>Subject and Sections -
+            <code>/v2/subjects</code>
+        </h3>
 
         <h4>Subject</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/subjects</code> - Get all subjects
+                <code>
+                    <strong>GET</strong> /v2/subjects</code> - Get all subjects
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/subjects</code> - Insert a new subject
+                <code>
+                    <strong>PUT</strong> /v2/subjects</code> - Insert a new subject
+                <ul>
+                    <li>subjectId</li>
+                    <li>nameAbv</li>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                    <li>credit</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/subjects/:subid</code> - Get the specified subject
+                <code>
+                    <strong>GET</strong> /v2/subjects/:subid</code> - Get the specified subject
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/subjects/:subid</code> - Update the specified subject
+                <code>
+                    <strong>PATCH</strong> /v2/subjects/:subid</code> - Update the specified subject
+                <ul>
+                    <li>nameAbv</li>
+                    <li>nameEn</li>
+                    <li>nameTh</li>
+                    <li>credit</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/subjects/:subid</code> - Delete the specified subject
+                <code>
+                    <strong>DELETE</strong> /v2/subjects/:subid</code> - Delete the specified subject
             </li>
         </ul>
 
         <h4>Class (subject in a certain year)</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester</code> - Get the class corresponding to the subject in the specified semester
+                <code>
+                    <strong>GET</strong> /v2/subjects/:subid/:year/:semester</code> - Get the class corresponding to the subject
+                in the specified semester
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/subjects/:subid/:year/:semester</code> - Insert a class corresponding to the subject in the specified semester
+                <code>
+                    <strong>PUT</strong> /v2/subjects/:subid/:year/:semester</code> - Insert a class corresponding to the subject
+                in the specified semester
+                <ul>
+                    <li>midtermStartDatetime</li>
+                    <li>midtermEndDatetime</li>
+                    <li>FinalStartDatetime</li>
+                    <li>FinalEndDatetime</li>
+                </ul>
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/subjects/:subid/:year/:semester</code> - Update the class corresponding to the subject in the specified semester
+                <code>
+                    <strong>PATCH</strong> /v2/subjects/:subid/:year/:semester</code> - Update the class corresponding to the subject
+                in the specified semester
+                <ul>
+                    <li>midtermStartDatetime</li>
+                    <li>midtermEndDatetime</li>
+                    <li>FinalStartDatetime</li>
+                    <li>FinalEndDatetime</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/subjects/:subid/:year/:semester</code> - Delete the class corresponding to the subject in the specified semester
+                <code>
+                    <strong>DELETE</strong> /v2/subjects/:subid/:year/:semester</code> - Delete the class corresponding to the subject
+                in the specified semester
             </li>
         </ul>
 
         <h4>Section</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Get all sections of a subject
+                <code>
+                    <strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Get all sections of a subject
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Insert a new section for the specified subject
+                <code>
+                    <strong>PUT</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Insert a new section for the specified
+                subject
+                <ul>
+                    <li>sectionNo</li>
+                    <li>classroom</li>
+                    <li>genedType</li>
+                    <li>maxStudent</li>
+                    <li>teachedBy</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Get the specified section 
+                <code>
+                    <strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Get the specified section
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Update the specified section
+                <code>
+                    <strong>PATCH</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Update the specified section
+                <ul>
+                    <li>classroom</li>
+                    <li>genedType</li>
+                    <li>maxStudent</li>
+                    <li>teachedBy</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Delete the specified section from the subject
+                <code>
+                    <strong>DELETE</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Delete the specified section
+                from the subject
             </li>
             <li>
-                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno/students</code> - Get the list of students in the section
+                <code>
+                    <strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno/students</code> - Get the list of students
+                in the section
             </li>
         </ul>
 
     </div>
 
     <div class="parent-route-entry">
-        <h3>Teachers - <code>/v2/teachers</code></h3>
+        <h3>Teachers -
+            <code>/v2/teachers</code>
+        </h3>
         <h4>Teacher</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/teachers</code> - Get all teachers
+                <code>
+                    <strong>GET</strong> /v2/teachers</code> - Get all teachers
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/teachers</code> - Insert a new teacher
+                <code>
+                    <strong>PUT</strong> /v2/teachers</code> - Insert a new teacher
+                <ul>
+                    <li>teacherId</li>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>teacherEmail</li>
+                    <li>telNo</li>
+                    <li>worksForFaculty</li>
+                    <li>worksForDepartment</li>
+                    <li>since</li>
+                </ul>
             </li>
             <li>
-                <code><strong>GET</strong> /v2/teachers/:tid</code> - Get the specified teacher
+                <code>
+                    <strong>GET</strong> /v2/teachers/:tid</code> - Get the specified teacher
             </li>
             <li>
-                <code><strong>PATCH</strong> /v2/teachers/:tid</code> - Update the specified teacher
+                <code>
+                    <strong>PATCH</strong> /v2/teachers/:tid</code> - Update the specified teacher
+                <ul>
+                    <li>fNameEn</li>
+                    <li>mNameEn</li>
+                    <li>lNameEn</li>
+                    <li>fNameTh</li>
+                    <li>mNameTh</li>
+                    <li>lNameTh</li>
+                    <li>teacherEmail</li>
+                    <li>telNo</li>
+                    <li>worksForFaculty</li>
+                    <li>worksForDepartment</li>
+                    <li>since</li>
+                </ul>
             </li>
             <li>
-                <code><strong>DELETE</strong> /v2/teachers/:tid</code> - Delete the specified teacher
+                <code>
+                    <strong>DELETE</strong> /v2/teachers/:tid</code> - Delete the specified teacher
             </li>
             <li>
-                <code><strong>GET</strong> /v2/teachers/:tid/advisees</code> - Get the list of students that the teacher advises
+                <code>
+                    <strong>GET</strong> /v2/teachers/:tid/advisees</code> - Get the list of students that the teacher advises
             </li>
         </ul>
 
         <h4>Teacher Schedule</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach</code> - Get all teaching schedules (in all years) of the specified teacher
+                <code>
+                    <strong>GET</strong> /v2/teachers/:tid/schedules/teach</code> - Get all teaching schedules (in all years) of
+                the specified teacher
             </li>
             <li>
-                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year</code> - Get all teaching schedules (in a certain year) of the specified teacher
+                <code>
+                    <strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year</code> - Get all teaching schedules (in a certain
+                year) of the specified teacher
             </li>
             <li>
-                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year/:semester</code> - Get a single teaching schedule of the specified teacher
+                <code>
+                    <strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year/:semester</code> - Get a single teaching schedule
+                of the specified teacher
             </li>
         </ul>
     </div>
 
 </body>
+
 </html>
