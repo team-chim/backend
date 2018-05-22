@@ -32,19 +32,19 @@
         <h4>Academic Semester</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/academic/years/:year/semesters</code>
+                <code><strong>GET</strong> /v2/academic/years/:year/semesters</code> - Get all semesters of the specified academic year
             </li>
             <li>
-                <code><strong>PUT</strong> /v2/academic/years/:year/semesters</code>
+                <code><strong>PUT</strong> /v2/academic/years/:year/semesters</code> - Insert a new semester for the specified academic year
             </li>
             <li>
-                <code><strong>GET</strong> /v2/academic/years/:year/semesters/:semester</code>
+                <code><strong>GET</strong> /v2/academic/years/:year/semesters/:semester</code> - Get the specified semester
             </li>
             <li>
-                <code><strong>PATCH</strong>  /v2/academic/years/:year/semesters/:semester</code>
+                <code><strong>PATCH</strong>  /v2/academic/years/:year/semesters/:semester</code> - Update the specified semester`
             </li>
             <li>
-                <code><strong>DELETE</strong>  /v2/academic/years/:year/semesters/:semester</code>
+                <code><strong>DELETE</strong>  /v2/academic/years/:year/semesters/:semester</code> - Delete the specified semester
             </li>
         </ul>
     </div>
@@ -155,6 +155,48 @@
 
     <div class="parent-route-entry">
         <h3>Faculty Groups - <code>/v2/faculty_groups</code></h3>
+
+        <h4>Faculty Group</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/faculty_group</code> - Get all faculties groups
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/faculty_group</code> - Insert a new faculty group
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/faculty_group/:fgid</code> - Get the specified faculty group details
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/faculty_group/:fgid</code> - Update the specified faculty group
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/faculty_group/:fgid</code> - Delete the specified faculty groups
+            </li>
+        </ul>
+    </div>
+
+    <div class="parent-route-entry">
+        <h3>Offers - <code>/v2/internship/offers</code></h3>
+
+        <h4>Offer</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/internship/offers</code> - Get all internship offers (optional parameter: year)
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/internship/offers</code> - Insert a new internship offer
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/internship/offers</code> - Update the specified internship offer
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/internship/offers</code> - Delete the specified internship offer
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/internship/offers/:compid</code> - Get all internship offers that belong to the specified company (optional parameter: year)
+            </li>
+        </ul>
     </div>
 
     <div class="parent-route-entry">
