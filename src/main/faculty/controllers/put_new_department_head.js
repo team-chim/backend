@@ -8,10 +8,10 @@ module.exports = (req, res) => {
 
     // Must match DB
     let newManagementship = {
-        TeacherID: req.body.teacherId,
+        TeacherID: req.body.teacherId || req.body.teacherid || req.body.tid,
         FacultyID: facultyId,
         DepartmentID: departmentId,
-        StartDate: req.body.startDate,
+        StartDate: req.body.startDate || req.body.startdate,
     }
 
     if (!newManagementship.TeacherID) {

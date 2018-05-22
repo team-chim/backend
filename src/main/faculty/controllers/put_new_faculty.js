@@ -3,15 +3,14 @@ const SQL = require('../../../queries/index');
 
 module.exports = (req, res) => {
 
-    let facultyId = req.params.fid;
 
     // Must match DB
     let newFaculty = {
-        FacultyID:  req.body.facultyId,
-        NameEN:     req.body.nameEn,
-        NameTH:     req.body.nameTh,
-        TelNo:      req.body.telNo,
-        BelongsTo:   req.body.belongsTo,
+        FacultyID:  req.body.facultyId || req.body.fid || req.body.facultyid,
+        NameEN:     req.body.nameEn || req.body.nameen,
+        NameTH:     req.body.nameTh || req.body.nameth,
+        TelNo:      req.body.telNo || req.body.telno,
+        BelongsTo:   req.body.belongsTo || req.body.belongsto,
     }
 
     if (!newFaculty.FacultyID) {

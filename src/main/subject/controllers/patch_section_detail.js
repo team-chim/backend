@@ -11,7 +11,7 @@ module.exports = (req, res) => {
 
 
     let classroom = req.body.classroom || req.body.classRoom;
-    let genedType = req.body.genedtype || req.body.gendType;
+    let genedType = req.body.genedtype || req.body.genedType;
     let maxStudent = req.body.maxstudent || req.body.maxStudent;
     let currentStudent = null;
     let teachedBy = req.body.teachedby || req.body.teachedBy;

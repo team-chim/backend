@@ -9,8 +9,8 @@ module.exports = (req, res) => {
     let newReport = {
         StudentID:      stuid,
         Year:           req.body.year,
-        CompanyID:      req.body.companyId,
-        BranchName:     req.body.branchName,
+        CompanyID:      req.body.companyId || req.body.compid || req.body.companyID,
+        BranchName:     req.body.branchName || req.body.branchname,
         Number:         req.body.number,
         Date:           req.body.date,
         Hours:          req.body.hours,

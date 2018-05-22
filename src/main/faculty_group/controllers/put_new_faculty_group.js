@@ -5,9 +5,9 @@ module.exports = (req, res) => {
 
     // Must match DB
     let newFacultyGroup = {
-        FacultyGroupID:  req.body.facultyGroupId,
-        NameEN:     req.body.nameEn,
-        NameTH:     req.body.nameTh,
+        FacultyGroupID:  req.body.facultyGroupId || req.body.facultygroupidd || req.body.fgid || req.body.fgID || req.body.fgId,
+        NameEN:     req.body.nameEn || req.body.nameen,
+        NameTH:     req.body.nameTh || req.body.nameth,
     }
 
     if (!newFacultyGroup.FacultyGroupID) {

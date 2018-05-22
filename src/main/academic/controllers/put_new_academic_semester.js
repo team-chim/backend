@@ -8,16 +8,16 @@ module.exports = (req, res) => {
     let newAcademicSemester = {
         Year: year,
         Semester:               req.body.semester || req.body.Semester,
-        SemesterStartDate:      req.body.semesterStartDate || req.body.SemesterStartDate,
-        SemesterEndDate:        req.body.semesterEndDate || req.body.SemesterEndDate,
-        RegisterStartDate:      req.body.registerStartDate || req.body.RegisterStartDate,
-        RegisterEndDate:        req.body.registerEndDate || req.body.RegisterEndDate,
-        AddingStartDate:        req.body.addingStartDate || req.body.AddingStartDate,
-        AddingEndDate:          req.body.addingEndDate || req.body.AddingEndDate,
-        DroppingStartDate:      req.body.droppingStartDate || req.body.DroppingStartDate,
-        DroppingEndDate:        req.body.droppingEndDate || req.body.DroppingEndDate,
-        WithdrawStartDate:      req.body.withdrawStartDate || req.body.WithdrawStartDate,
-        WithdrawEndDate:        req.body.withdrawEndDate || req.body.WithdrawEndDate,
+        SemesterStartDate:      req.body.semesterStartDate || req.body.SemesterStartDate || req.body.semesterstartdate,
+        SemesterEndDate:        req.body.semesterEndDate || req.body.SemesterEndDate || req.body.semesterenddate,
+        RegisterStartDate:      req.body.registerStartDate || req.body.RegisterStartDate || req.body.registerstartdate,
+        RegisterEndDate:        req.body.registerEndDate || req.body.RegisterEndDate || req.body.registerenddate,
+        AddingStartDate:        req.body.addingStartDate || req.body.AddingStartDate || req.body.addingstartdate,
+        AddingEndDate:          req.body.addingEndDate || req.body.AddingEndDate || req.body.addingenddate,
+        DroppingStartDate:      req.body.droppingStartDate || req.body.DroppingStartDate || req.body.droppingstartdate,
+        DroppingEndDate:        req.body.droppingEndDate || req.body.DroppingEndDate || req.body.droppingenddate,
+        WithdrawStartDate:      req.body.withdrawStartDate || req.body.WithdrawStartDate || req.body.withdrawstartdate,
+        WithdrawEndDate:        req.body.withdrawEndDate || req.body.WithdrawEndDate || req.body.withdrawenddate,
     }
 
     if (!newAcademicSemester.Semester) {
