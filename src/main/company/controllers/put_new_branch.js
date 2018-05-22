@@ -8,14 +8,14 @@ module.exports = (req, res) => {
     // Must match DB
     let newBranch = {
         CompanyID: companyId,
-        BranchName: req.body.branchName,
-        Manager: req.body.manager,
-        TelNo: req.body.telNo,
-        Address: req.body.address,
-        City: req.body.city,
-        State: req.body.state,
-        PostalCode: req.body.postalCode,
-        Country: req.body.country
+        BranchName: req.body.branchName || req.body.BranchName,
+        Manager: req.body.manager || req.body.Manager,
+        TelNo: req.body.telNo || req.body.TelNo,
+        Address: req.body.address || req.body.Address,
+        City: req.body.city || req.body.City,
+        State: req.body.state || req.body.State,
+        PostalCode: req.body.postalCode || req.body.PostalCode,
+        Country: req.body.country || req.body.Country
     }
 
     if (!newBranch.BranchName) {

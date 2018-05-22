@@ -1,2 +1,2 @@
-INSERT INTO `section`
+INSERT INTO `company_branch`
 SET ?;
