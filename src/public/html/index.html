@@ -182,7 +182,7 @@
         <h4>Offer</h4>
         <ul>
             <li>
-                <code><strong>GET</strong> /v2/internship/offers</code> - Get all internship offers (optional parameter: year)
+                <code><strong>GET</strong> /v2/internship/offers</code> - Get all internship offers (optional URL parameter: year)
             </li>
             <li>
                 <code><strong>PUT</strong> /v2/internship/offers</code> - Insert a new internship offer
@@ -194,7 +194,7 @@
                 <code><strong>DELETE</strong> /v2/internship/offers</code> - Delete the specified internship offer
             </li>
             <li>
-                <code><strong>GET</strong> /v2/internship/offers/:compid</code> - Get all internship offers that belong to the specified company (optional parameter: year)
+                <code><strong>GET</strong> /v2/internship/offers/:compid</code> - Get all internship offers that belong to the specified company (optional URL parameter: year)
             </li>
         </ul>
     </div>
@@ -205,10 +205,102 @@
 
     <div class="parent-route-entry">
         <h3>Subject and Sections - <code>/v2/subjects</code></h3>
+
+        <h4>Subject</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/subjects</code> - Get all subjects
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/subjects</code> - Insert a new subject
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/subjects/:subid</code> - Get the specified subject
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/subjects/:subid</code> - Update the specified subject
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/subjects/:subid</code> - Delete the specified subject
+            </li>
+        </ul>
+
+        <h4>Class (subject in a certain year)</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester</code> - Get the class corresponding to the subject in the specified semester
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/subjects/:subid/:year/:semester</code> - Insert a class corresponding to the subject in the specified semester
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/subjects/:subid/:year/:semester</code> - Update the class corresponding to the subject in the specified semester
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/subjects/:subid/:year/:semester</code> - Delete the class corresponding to the subject in the specified semester
+            </li>
+        </ul>
+
+        <h4>Section</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Get all sections of a subject
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/subjects/:subid/:year/:semester/sections</code> - Insert a new section for the specified subject
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Get the specified section 
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Update the specified section
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno</code> - Delete the specified section from the subject
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/subjects/:subid/:year/:semester/sections/:sectno/students</code> - Get the list of students in the section
+            </li>
+        </ul>
+
     </div>
 
     <div class="parent-route-entry">
         <h3>Teachers - <code>/v2/teachers</code></h3>
+        <h4>Teacher</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/teachers</code> - Get all teachers
+            </li>
+            <li>
+                <code><strong>PUT</strong> /v2/teachers</code> - Insert a new teacher
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/teachers/:tid</code> - Get the specified teacher
+            </li>
+            <li>
+                <code><strong>PATCH</strong> /v2/teachers/:tid</code> - Update the specified teacher
+            </li>
+            <li>
+                <code><strong>DELETE</strong> /v2/teachers/:tid</code> - Delete the specified teacher
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/teachers/:tid/advisees</code> - Get the list of students that the teacher advises
+            </li>
+        </ul>
+
+        <h4>Teacher Schedule</h4>
+        <ul>
+            <li>
+                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach</code> - Get all teaching schedules (in all years) of the specified teacher
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year</code> - Get all teaching schedules (in a certain year) of the specified teacher
+            </li>
+            <li>
+                <code><strong>GET</strong> /v2/teachers/:tid/schedules/teach/:year/:semester</code> - Get a single teaching schedule of the specified teacher
+            </li>
+        </ul>
     </div>
 
 </body>
