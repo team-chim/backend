@@ -58,3 +58,15 @@ describe('Get offers by company and year - /v2/internship/offers/:compid', () =>
         expect(response.statusCode).toBe(404);
     });
 })
+
+describe('Get single offer - /v2/internship/offers/:compid/:year/:offerid', () => {
+    test(`It should response the GET method on exist [compid = ${EXIST_OFFER.CompanyID}, year = ${EXIST_OFFER.Year}]`, async () => {
+        const response = await request(app).get(`/v2/internship/offers/${EXIST_OFFER.CompanyID}/${EXIST_OFFER.Year}/${EXIST_OFFER.OfferID}`);
+        expect(response.statusCode).toBe(200);
+    });
+
+    test(`It should response the GET method on not exist [compid = ${NON_EXIST_OFFER.CompanyID}, year = ${NON_EXIST_OFFER.Year}]`, async () => {
+        const response = await request(app).get(`/v2/internship/offers/${NON_EXIST_OFFER.CompanyID}/${NON_EXIST_OFFER.Year}/${NON_EXIST_OFFER.OfferID}`);
+        expect(response.statusCode).toBe(404);
+    });
+})

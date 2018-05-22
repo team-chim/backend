@@ -34,12 +34,16 @@ module.exports = {
 
     FIND_UNPAID_STUDENT: loadSql('21_unpaid_students.sql'),
 
+
+    FIND_SINGLE_OFFER: loadSql('25_find_single_offer.sql'),
     FIND_ALL_OFFERS: loadSql('25_find_all_offers.sql'),
     FIND_ALL_OFFERS_COMPANY: loadSql('25_find_all_offers_by_company.sql'),
     FIND_ALL_OFFERS_YEAR: loadSql('25_find_all_offers_year.sql'),
     FIND_ALL_OFFERS_COMPANY_YEAR: loadSql('25_find_all_offers_company_year.sql'),
 
     FIND_REVIEW_COMPANY: loadSql('26_find_review.sql'),
+
+    FIND_OFFER_TO_DEPARTMENT: loadSql('27_find_offer_to_department.sql'),
 
     FIND_STUDENT_DETAIL: loadSql('50_student_details.sql'),
     FIND_STUDENTS_ALL: loadSql('50_student_list.sql'),
