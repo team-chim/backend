@@ -3,25 +3,6 @@ const db = require('../database')
 
 module.exports =  {
 	
-	// Faculties
-    EXIST_FACULTY: 21,
-    NON_EXIST_FACULTY: 99,
-    
-	OLD_FACULTY: {
-		FacultyID: '99',
-		NameEN: 'ABC',
-		NameTH: 'เอบีซี',
-		TelNo: '999-999-999',
-		BelongsTo: '1'
-	},
-	
-	NEW_FACULTY: {
-		FacultyID: '50',
-		NameEN: 'IJK',
-		NameTH: 'ไอเจเค',
-		TelNo: '888-888-888',
-		BelongsTo: '2'
-	},
 	
 	//Nationality
 	
@@ -33,72 +14,6 @@ module.exports =  {
 		NationName: 'Autralian'
 	},
 	
-	//Subject
-	
-	OLD_VALID_SUBJECT: {
-		SubjectID: '2201123',
-		NameAbv: 'THAI JUV LIT',
-		NameEN: 'Thai Juvenile Literature',
-		NameTH: 'วรรณกรรมไทยสำหรับเยาวชน',
-		Credit: 3
-	},
-	
-	NEW_VALID_SUBJECT: {
-		SubjectID: '2202999',
-		NameAbv: 'ENG JUV LIT',
-		NameEN: 'English Juvenile Literature',
-		NameTH: 'วรรณกรรมอังกฤษสำหรับเยาวชน',
-		Credit: 3
-	},
-	
-	//Department
-	
-	OLD_VALID_DEPARTMENT:{
-		FacultyID: '21',
-		DepartmentID: '55',
-		NameEN: 'Mechanical Computer',
-		NameTH: 'เครื่องคอมพ์',
-	},
-	
-	NEW_VALID_DEPARTMENT:{
-		FacultyID: '21',
-		DepartmentID: '66',
-		NameEN: 'test',
-		NameTH: 'ทดสอบ',
-	},
-	
-	// Teachers
-    EXIST_TEACHER: '0000034157',
-    NON_EXIST_TEACHER: '1133557799',
-	
-	OLD_VALID_TEACHER:{
-		FnameEN: 'Ben',
-		MnameEN: 'A',
-		LnameEN: 'Jy',
-		FnameTH: 'เบ็น',
-		MnameTH: 'เอ',
-		LnameTH: 'จี้',
-		TeacherEmail: 'ben.jy@gmail.com',
-		TelNo: '000-999-888',
-		WorksForFaculty: '21',
-		WorksForDepartment: '1',
-		Since: '2017-05-01',
-	},
-	
-	NEW_VALID_TEACHER:{
-		FnameEN: 'Bel',
-		MnameEN: 'B',
-		LnameEN: 'DO',
-		FnameTH: 'เบล',
-		MnameTH: 'บี',
-		LnameTH: 'ดู',
-		TeacherEmail: 'bel.do@gmail.com',
-		TelNo: '888-999-000',
-		WorksForFaculty: '22',
-		WorksForDepartment: '4',
-		Since: '2017-05-03',
-	},
-
 
     // Students
     EXIST_STUDENT: '5730123421',
@@ -169,38 +84,6 @@ module.exports =  {
         });
     },
     
-	//Internship_offer
-	
-	OLD_INTERNSHIP_OFFER:{
-		CompanyID: 1,
-		Year: '2013',
-		PositionNameEN: 'A',
-		PositionNameTH: 'เอ',
-		PositionDescriptionEN: 'AAA',
-		PositionDescriptionTH: 'เอเอเอ',
-		NumberOfPosition: '3',
-		OtherRequirements: null,
-		StatedMinimumGrade: '3.00',
-		StatedSalary: '1000',
-		OtherBenefits: null,
-		ExpiryDate: '2013-12-31',
-	},
-	
-	NEW_INTERNSHIP_OFFER:{
-		CompanyID: 1,
-		Year: '2013',
-		PositionNameEN: 'B',
-		PositionNameTH: 'บี',
-		PositionDescriptionEN: 'BBB',
-		PositionDescriptionTH: 'บีบีบี',
-		NumberOfPosition: '3',
-		OtherRequirements: null,
-		StatedMinimumGrade: '3.00',
-		StatedSalary: '1000',
-		OtherBenefits: null,
-		ExpiryDate: '2014-02-01',
-	},
-	
 	//Payment
 	
 	OLD_VALID_PAYMENT: {
@@ -221,97 +104,21 @@ module.exports =  {
 		PaymentDate: '2016-07-20',
 	},
 	
-	//Class
-	
-	OLD_VALID_CLASS: {
-		SubjectID: '2301103',
-		Year: '2016',
-		Semester: '2',
-		MidtermStartDatetime: '2017-03-03 13:00:00',
-		MidtermEndDatetime: '2017-03-03 16:00:00',
-		FinalStartDatetime: '2017-05-17 13:00:00',
-		FinalEndDatetime: '2017-05-17 16:00:00',
-	},
-	
-	NEW_VALID_CLASS: {
-		SubjectID: '2301103',
-		Year: '2016',
-		Semester: '2',
-		MidtermStartDatetime: '2017-03-04 13:00:00',
-		MidtermEndDatetime: '2017-03-04 16:00:00',
-		FinalStartDatetime: '2017-05-20 13:00:00',
-		FinalEndDatetime: '2017-05-20 16:00:00',
-	},
-	
-	//Section
-	
-	OLD_VALID_SECTION:{
-		SubjectID: '2301103',
-		Year: 2016,
-		Semester: 2,
-		SectionNo: 44,
-		Classroom: 'ENG-204',
-		GenedType: 0,
-		MaxStudent: 20,
-		TeachedBy: '0010003176',
-	},
-	
-	NEW_VALID_SECTION:{
-		SubjectID: '2301103',
-		Year: 2016,
-		Semester: 2,
-		SectionNo: 20,
-		Classroom: 'ENG-209',
-		GenedType: 0,
-		MaxStudent: 30,
-		TeachedBy: '0123456789',
-	},
-	
-	//Managementship
-	
-	OLD_VALID_SECTION:{
-		TeacherID: '0010013658',
-		FacultyID: 21,
-		DepartmentID: 10,
-		StartDate: '2016-05-01',
-		EndDat: null,
-	},
-	
-	NEW_VALID_SECTION:{
-		TeacherID: '0010013731',
-		FacultyID: 21,
-		DepartmentID: 10,
-		StartDate: '2015-05-01',
-		EndDat: null,
-	},
-	
 	//Main_branch
 	
-	OLD_VALID_MAIN_BRANCH:{
+	OLD_VALID_MAIN_BRANCH: {
 		CompanyID: 1,
 		BranchName: 'Siam Paragon',
 	},
 	
-	NEW_VALID_MAIN_BRANCH:{
+	NEW_VALID_MAIN_BRANCH: {
 		CompanyID: 1,
 		BranchName: 'Central World',
 	},
 	
-	//Subject_requires
-	
-	OLD_VALID_SUBJECT_REQUIRES:{
-		SubjectID: '2302112',
-		ReqSubjectID: '2302127',
-	},
-	
-	NEW_VALID_SUBJECT_REQUIRES:{
-		SubjectID: '2302112',
-		ReqSubjectID: '2302113',
-	},
-	
 	//Internship_to_department
 	
-	OLD_VALID_INTENRSHIP_TO_DEPARTMENT:{
+	OLD_VALID_INTERNSHIP_TO_DEPARTMENT: {
 		CompanyID: 4,
 		Year: 2018,
 		OfferID: 2,
@@ -319,7 +126,7 @@ module.exports =  {
 		DepartmentID: 1,
 	},
 	
-	NEW_VALID_INTENRSHIP_TO_DEPARTMENT:{
+	NEW_VALID_INTERNSHIP_TO_DEPARTMENT: {
 		CompanyID: 4,
 		Year: 2018,
 		OfferID: 2,
@@ -329,7 +136,7 @@ module.exports =  {
 	
 	//Studies
 	
-	OLD_VALID_STUDIES:{
+	OLD_VALID_STUDIES: {
 		StudentID: '5732831021',
 		SubjectID: '2110101',
 		Year: 2016,
@@ -338,7 +145,7 @@ module.exports =  {
 		Grade: 'A',
 	},
 	
-	NEW_VALID_STUDIES:{
+	NEW_VALID_STUDIES: {
 		StudentID: '5732831021',
 		SubjectID: '2110101',
 		Year: 2016,
@@ -349,42 +156,19 @@ module.exports =  {
 	
 	//Company_Industries
 	
-	OLD_VALID_COMPANY_INDUSTRIES:{
+	OLD_VALID_COMPANY_INDUSTRIES: {
 		CompanyID: 1,
 		Industry: 'Agriculture',
 	},
 	
-	NEW_VALID_COMPANY_INDUSTRIES:{
+	NEW_VALID_COMPANY_INDUSTRIES: {
 		CompanyID: 2,
 		Industry: 'Agriculture',
 	},
 	
-	//Section_Datetime
-	
-	OLD_VALID_SECTION_DATETIME:{
-		Year: 2016,
-		Semester: 1,
-		SubjectID: '2110263',
-		SectionNo: 1,
-		Day: 'MO',
-		StartTime: '13:00:00',
-		EndTime: '16:00:00',
-	},
-	
-	NEW_VALID_SECTION_DATETIME:{
-		Year: 2016,
-		Semester: 1,
-		SubjectID: '2110263',
-		SectionNo: 2,
-		Day: 'TU',
-		StartTime: '13:00:00',
-		EndTime: '16:00:00',
-	},
-	
-	
 	//Has_fee
 	
-	OLD_VALID_HAS_FEE:{
+	OLD_VALID_HAS_FEE: {
 		FacultyGroupID: 1,
 		IsThai: true,
 		EntryYear: 2018,
@@ -392,7 +176,7 @@ module.exports =  {
 		UndergradFee: 25000,
 	},
 	
-	NEW_VALID_HAS_FEE:{
+	NEW_VALID_HAS_FEE: {
 		FacultyGroupID: 1,
 		IsThai: false,
 		EntryYear: 2018,
@@ -402,7 +186,7 @@ module.exports =  {
 	
 	//Internship
 	
-	OLD_VALID_INTENRSHIP:{
+	OLD_VALID_INTERNSHIP: {
 		StudentID: '5730123421',
 		Year: '2015',
 		CompanyID: 1,
@@ -417,7 +201,7 @@ module.exports =  {
 		OfferID: null,
 	},
 	
-	NEW_VALID_INTENRSHIP:{
+	NEW_VALID_INTERNSHIP: {
 		StudentID: '5731150221',
 		Year: '2015',
 		CompanyID: 1,
@@ -434,14 +218,14 @@ module.exports =  {
 	
 	//Eng_official_internship
 	
-	OLD_VALID_ENG_OFFICIAL_INTERNSHIP:{
+	OLD_VALID_ENG_OFFICIAL_INTERNSHIP: {
 		StudentID: '5730098721',
 		Year: 2016,
 		CompanyID: 3,
 		BranchName: 1,
 	},
 	
-	NEW_VALID_ENG_OFFICIAL_INTERNSHIP:{
+	NEW_VALID_ENG_OFFICIAL_INTERNSHIP: {
 		StudentID: '5730098721',
 		Year: 2016,
 		CompanyID: 3,
@@ -450,7 +234,7 @@ module.exports =  {
 	
 	//Report
 	
-	OLD_VALID_REPORT:{
+	OLD_VALID_REPORT: {
 		StudentID: '5730000021 ',
 		Year: 2016,
 		CompanyID: 3,
@@ -459,7 +243,7 @@ module.exports =  {
 		Date: '2017-06-14',
 	},
 	
-	NEW_VALID_REPORT:{
+	NEW_VALID_REPORT: {
 		StudentID: '5730000021 ',
 		Year: 2016,
 		CompanyID: 3,

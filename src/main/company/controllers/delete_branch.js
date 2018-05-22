@@ -7,7 +7,7 @@ module.exports = (req, res) => {
     const branchid = req.params.brid;
 
     
-    db.query("DELETE FROM company_branch WHERE CompanyID = ? AND BranchName = ?;", [companyid, brid], (err, results, fields) => {
+    db.query("DELETE FROM company_branch WHERE CompanyID = ? AND BranchName = ?;", [companyid, branchid], (err, results, fields) => {
         if (err) {
             console.log(err);
             res.sendStatus(500);

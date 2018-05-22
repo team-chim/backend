@@ -106,3 +106,46 @@ describe('Insert a company branch - /v2/companies/:compid/branches', () => {
         MOCK.resetBranchTable(done);
     })
 })
+
+/// DELETE ///
+
+describe('Delete a company - /v2/companies/:compid', () => {
+    
+    beforeEach((done) => {
+        MOCK.resetCompanyTable(done);
+    });
+
+    test(`It should response the DELETE method on exist [compid = ${MOCK.OLD_VALID_COMPANY.CompanyID}]`, async () => {
+        const response = await request(app).delete(`/v2/companies/${MOCK.OLD_VALID_COMPANY.CompanyID}`);
+        expect(response.statusCode).toBe(204);
+
+        // Test Duplicate
+        const response_dup = await request(app).delete(`/v2/companies/${MOCK.OLD_VALID_COMPANY.CompanyID}`);
+        expect(response_dup.statusCode).toBe(404);
+    });
+
+    afterEach((done) => {
+        MOCK.resetCompanyTable(done);
+    })
+})
+
+
+describe('Delete a branch - /v2/companies/:compid/branches/:brid', () => {
+    
+    beforeEach((done) => {
+        MOCK.resetBranchTable(done);
+    });
+
+    test(`It should response the DELETE method on exist [compid = ${MOCK.OLD_VALID_COMPANY_BRANCH.CompanyID}]`, async () => {
+        const response = await request(app).delete(`/v2/companies/${MOCK.OLD_VALID_COMPANY_BRANCH.CompanyID}/branches/${MOCK.OLD_VALID_COMPANY_BRANCH.BranchName}`);
+        expect(response.statusCode).toBe(204);
+
+        // Test Duplicate
+        const response_dup = await request(app).delete(`/v2/companies/${MOCK.OLD_VALID_COMPANY_BRANCH.CompanyID}/branches/${MOCK.OLD_VALID_COMPANY_BRANCH.BranchName}`);
+        expect(response_dup.statusCode).toBe(404);
+    });
+
+    afterEach((done) => {
+        MOCK.resetBranchTable(done);
+    })
+})

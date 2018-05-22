@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../app');
 
-const MOCK = require('../../../config/mock');
+const MOCK = require('./mock');
 const EXIST_OFFER = {
     CompanyID: 1,
     Year: 2016,
