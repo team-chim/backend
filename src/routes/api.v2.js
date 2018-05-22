@@ -13,7 +13,8 @@ router.get('/test', (req, res) => {
 router.get('/students/unpaid', require('../controllers/get_unpaid_students'));
 router.get('/students/official_internships/:year', require('../controllers/get_all_official_internship_year')); 
 
-/* Offers
+/* Offers */
+router.use('/internship/offers', require('../main/offer/routers/v2'));
 
 /* Academic Year & Semesters */
 router.use('/academic', require('../main/academic/routers/v2'));
