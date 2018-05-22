@@ -33,6 +33,7 @@ router.get('/:stuid/schedules/midterm/:year/:semester', require('../controllers/
 router.get('/:stuid/fee', require('../controllers/get_student_fee'));
 router.get('/:stuid/payments', require('../controllers/get_payment_status'));
 router.put('/:stuid/payments', require('../controllers/put_new_payment'));
+router.patch('/:stuid/payments', require('../controllers/patch_payment'));
 router.delete('/:stuid/payments', require('../controllers/delete_payment'));
 
 /* Student - Internship */
