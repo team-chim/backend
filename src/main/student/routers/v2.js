@@ -48,5 +48,6 @@ router.delete('/:stuid/official_internship', require('../controllers/delete_offi
 router.get('/:stuid/official_internship/reports', require('../controllers/get_student_reports')); 
 router.put('/:stuid/official_internship/reports', require('../controllers/put_new_student_report')); 
 router.get('/:stuid/official_internship/reports/:repno', require('../controllers/get_student_reports')); 
+router.delete('/:stuid/official_internship/reports/:repno', require('../controllers/delete_student_report')); 
 
 module.exports = router
