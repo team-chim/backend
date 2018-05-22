@@ -104,6 +104,7 @@ module.exports = {
     UPDATE_COMPANY: loadSql('216_update_company.sql'),
     UPDATE_COMPANY_BRANCH: loadSql('217_update_company_branch.sql'),
     UPDATE_OFFER: loadSql('218_update_internship_offer.sql'),
+    UPDATE_INTERNSHIP: loadSql('219_update_internship.sql'),
 
     FIND_TEACH_SCHEDULE : loadSql('70_teach_schedule.sql'),
     FIND_SEMESTER_IN_YEAR: loadSql('71_find_semester_in_year.sql'),
