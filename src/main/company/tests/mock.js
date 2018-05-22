@@ -67,7 +67,7 @@ module.exports = {
                  // ... and delete it if it exists
                  if (results.length !== 0) {
                      console.log(results);
-                     db.query('DELETE FROM rexchula.`company` WHERE CompanyID = ?;', results[0], (err, results, fields) => {
+                     db.query('DELETE FROM rexchula.`company` WHERE CompanyID = ?;', results[0].CompanyID, (err, results, fields) => {
                          if (err) {
                              console.log(err);
                          };
@@ -91,7 +91,14 @@ module.exports = {
                         if (err) {
                             console.log(err);
                         }
-                        done();
+                        db.query('SELECT `CompanyID` FROM rexchula.`company` WHERE NameEN = ? LIMIT 1;', this.OLD_VALID_COMPANY.NameEN, (err, results, fields) => {
+                            if (err) {
+                                console.log(err);
+                            } else if (results.length !== 0) {
+                                this.OLD_VALID_COMPANY.CompanyID = results[0].CompanyID;
+                            }
+                            done();
+                        });
                     })
                 })
             })

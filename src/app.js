@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors')
 const compression = require('compression');
-const lowercasePaths = require('express-lowercase-paths');
 const multer = require('multer');
 
 // express static options
@@ -46,10 +45,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const upload = multer();
 app.use(upload.array());
 
-// Convert to lowercase
-app.use(lowercasePaths())
 // Static Dir
-
 app.use(express.static('public'))
 
 const __htmldir = path.join(__dirname, 'public', 'html');

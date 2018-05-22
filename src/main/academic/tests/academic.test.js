@@ -116,7 +116,7 @@ describe('Delete an academic year - /v2/academic/years/:year', () => {
         const response = await request(app).delete(`/v2/academic/years/${MOCK.OLD_VALID_ACADEMIC_YEAR.Year}`);
         expect(response.statusCode).toBe(204);
 
-        // Test Non exist
+        // Test Duplicate
         const response_dup = await request(app).delete(`/v2/academic/years/${MOCK.OLD_VALID_ACADEMIC_YEAR.Year}`);
         expect(response_dup.statusCode).toBe(404);
     });
@@ -137,7 +137,7 @@ describe('Delete an academic semester - /v2/academic/years/:year/semesters/:seme
         const response = await request(app).delete(`/v2/academic/years/${MOCK.OLD_VALID_SEMESTER.Year}/semesters/${MOCK.OLD_VALID_SEMESTER.Semester}`);
         expect(response.statusCode).toBe(204);
 
-        // Test Non exist
+        // Test Duplicate
         const response_dup = await request(app).delete(`/v2/academic/years/${MOCK.OLD_VALID_ACADEMIC_YEAR.Year}/semesters/${MOCK.OLD_VALID_SEMESTER.Semester}`);
         expect(response_dup.statusCode).toBe(404);
     });
