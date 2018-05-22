@@ -39,6 +39,7 @@ router.delete('/:stuid/payments', require('../controllers/delete_payment'));
 /* Student - Internship */
 router.get('/:stuid/internships', require('../controllers/get_student_internships'));
 router.put('/:stuid/internships', require('../controllers/put_new_internship'));
+router.patch('/:stuid/internships', require('../controllers/patch_internship'));
 router.delete('/:stuid/internships', require('../controllers/delete_internship'));
 router.get('/:stuid/internships/:year', require('../controllers/get_student_internships'));
 
