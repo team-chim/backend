@@ -9,18 +9,18 @@ const lowercasePaths = require('express-lowercase-paths');
 const multer = require('multer');
 
 // express static options
-var options = {
-    dotfiles: 'ignore',
-    etag: true,
-    extensions: ['htm', 'html'],
-    index: 'index.html',
-    lastModified: true,
-    maxAge: '1d',
-    setHeaders: function (res, path, stat) {
-      res.set('x-timestamp', Date.now());
-      res.header('Cache-Control', 'public, max-age=1d');
-    }
-  };
+// var options = {
+//     dotfiles: 'ignore',
+//     etag: true,
+//     extensions: ['htm', 'html'],
+//     index: 'index.html',
+//     lastModified: true,
+//     maxAge: '1d',
+//     setHeaders: function (res, path, stat) {
+//       res.set('x-timestamp', Date.now());
+//       res.header('Cache-Control', 'public, max-age=1d');
+//     }
+//   };
 
 // Routes
 const apiv2 = require('./routes/api.v2');
