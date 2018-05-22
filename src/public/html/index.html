@@ -50,6 +50,51 @@
     </div>
 
     <div class="parent-route-entry">
+            <h3>Companies and Branches - <code>/v2/companies</code></h3>
+        
+            <h4>Company</h4>
+            <ul>
+                <li>
+                    <code><strong>GET</strong> /v2/companies</code> - Get all companies
+                </li>
+                <li>
+                    <code><strong>PUT</strong> /v2/companies</code> - Insert a new company
+                </li>
+                <li>
+                    <code><strong>GET</strong> /v2/companies/:compid</code> - Get the specified company
+                </li>
+                <li>
+                    <code><strong>PATCH</strong> /v2/companies/:compid</code> - Update the specified company
+                </li>
+                <li>
+                    <code><strong>DELETE</strong> /v2/companies/:compid</code> - Delete the specified company
+                </li>
+            </ul>
+
+            <h4>Branch</h4>
+            <ul>
+                <li>
+                    <code><strong>GET</strong> /v2/companies/:compid/branches</code> - Get all branches of the specified company
+                </li>
+                <li>
+                    <code><strong>PUT</strong> /v2/companies/:compid/branches</code> - Insert a new branch for the specified company
+                </li>
+                <li>
+                    <code><strong>GET</strong> /v2/companies/:compid/branches/:brid</code> - Get the specified branch
+                </li>
+                <li>
+                    <code><strong>PATCH</strong> /v2/companies/:compid/branches/:brid</code> - Update the specified branch
+                </li>
+                <li>
+                    <code><strong>DELETE</strong> /v2/companies/:compid/branches/:brid</code> - Delete the specified branch
+                </li>
+                <li>
+                    <code><strong>GET</strong> /v2/companies/:compid/reviews</code> - Get reviews associated with the specified company
+                </li>
+            </ul>
+    </div>
+
+    <div class="parent-route-entry">
         <h3><code>/v2/students</code> - Students</h3>
     </div>
 
@@ -69,25 +114,6 @@
         <h3><code>/v2/faculty_groups</code> - Faculty Groups</h3>
     </div>
 
-    <div class="parent-route-entry">
-            <h3>Companies and Branches - <code>/v2/companies</code></h3>
-        
-            <h4>Academic Year</h4>
-            <ul>
-                <li>
-                    <code><strong>GET</strong> /v2/academic/years</code> - Get all academic years
-                </li>
-                <li>
-                    <code><strong>PUT</strong> /v2/academic/years</code> - Insert a new academic year
-                </li>
-                <li>
-                    <code><strong>GET</strong> /v2/academic/years/:year</code> - Get the specified academic year
-                </li>
-                <li>
-                    <code><strong>DELETE</strong> /v2/academic/years/:year</code> - Delete the specified academic year
-                </li>
-            </ul>
-    </div>
 
 </body>
 </html>
