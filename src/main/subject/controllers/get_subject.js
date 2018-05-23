@@ -24,45 +24,45 @@ module.exports = (req, res) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.length === 0) {
+                res.status(404).send({
+                    message: 'Cannot find specified subject'
+                })
             } else {
-                if (typeof results !== 'undefined' && results.length > 0) {
-                    db.query("SELECT `ReqSubjectID` FROM subject_requires WHERE `SubjectID` = ?;", subjectid, (err, requirements, fields) => {
-                        if (err) {
-                            console.log(err);
-                            res.sendStatus(500);
+                let subject = results[0];
+                db.query("SELECT `ReqSubjectID` FROM subject_requires WHERE `SubjectID` = ?;", subjectid, (err, requirements, fields) => {
+                    if (err) {
+                        console.log(err);
+                        res.sendStatus(500);
+                    }
+                    else {
+                        // Set the requirements field
+                        if (requirements.length > 0){
+                            subject.requirements = requirements.map(e => e.ReqSubjectID);
+                        } else {
+                            subject.requirements = [];
                         }
-                        else {
-                            if (requirements.length > 0){
-                                results.requirements = requirements.map(e => e.ReqSubjectID);
-                            } else {
-                                results.requirements = [];
-                            }
-                            if (year && semester) {
-                                // Then Fetch the sections
-                                results = results[0];
-                                db.query(SQL.FIND_SUBJECT_SECTION, [subjectid, year, semester], (err, sections, fields) => {
-                                    if (err) {
-                                        console.log(err);
-                                        res.sendStatus(500);
-                                    } else {
-                                        results.sections = sections;
-                                        res.send(results);
-                                    }
-                                });
-                            } else {
-                                res.send({
-                                    ...results,
-                                    message: "Year and/or semester was not specified. Not showing section details"
-                                })
-                            }
+
+                        if (year && semester) {
+
+                            // Then Fetch the sections
+                            db.query(SQL.FIND_SUBJECT_SECTION, [subjectid, year, semester], (err, sections, fields) => {
+                                if (err) {
+                                    console.log(err);
+                                    res.sendStatus(500);
+                                } else {
+                                    subject.sections = sections;
+                                    res.send(subject);
+                                }
+                            });
+                        } else {
+                            res.send({
+                                ...results,
+                                message: "Year and/or semester was not specified. Not showing section details"
+                            })
                         }
-                    })
-                } else {
-                    res.status(404).send({
-                        ...results,
-                        message: "No subject with specified ID was found."
-                    });
-                }
+                    }
+                })
                 
             }
         })
