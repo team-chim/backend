@@ -19,6 +19,7 @@ module.exports = {
 
     FIND_SUBJECT_DETAILS: loadSql('10_find_subject_details.sql'),
     FIND_SUBJECT_SECTION: loadSql('10_find_subject_section.sql'),
+    FIND_SUBJECT_CLASSES: loadSql('10_find_subject_classes.sql'),
     FIND_SUBJECT_SECTION_DETAIL: loadSql('10_find_subject_section_detail.sql'),
 
     FIND_STUDENT_IN_SECTION: loadSql('13_find_student_in_section.sql'),

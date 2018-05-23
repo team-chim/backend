@@ -1,2 +1,2 @@
-SELECT s.SubjectID, s.NameEN
+SELECT s.SubjectID, s.NameEN, s.NameAbv
 FROM subject s;
