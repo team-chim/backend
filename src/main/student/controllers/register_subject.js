@@ -28,19 +28,39 @@ module.exports = (req, res) => {
             "message": "Please specify the section's number"
         })
     } else {
-        db.query("INSERT INTO studies SET ?", registerRequest, (err, results, fields) => {
+        db.query("SELECT COUNT(*) AS CNT FROM section s WHERE s.SubjectID = ? AND s.SectionNo = ? AND s.Year = ? AND s.Semester = ?", [
+            registerRequest.SubjectID, 
+            registerRequest.SectionNo, 
+            registerRequest.Year,
+            registerRequest.Semester
+        ], (err, exists, fields) => {
             if (err) {
-                if (err.code === 'ER_DUP_ENTRY') {
-                    res.status(400).send({
-                        message: "Already registered for this section!"
-                    });
-                } else {
-                    console.log(err);
-                    res.sendStatus(500);
-                }
+                console.log(err);
+                res.sendStatus(500);
             } else {
-                res.sendStatus(202);
+                if (exists[0].CNT > 0) {
+                    db.query("INSERT INTO studies SET ?", registerRequest, (err, results, fields) => {
+                        if (err) {
+                            if (err.code === 'ER_DUP_ENTRY') {
+                                res.status(400).send({
+                                    message: "Already registered for this section!"
+                                });
+                            } else {
+                                console.log(err);
+                                res.sendStatus(500);
+                            }
+                        } else {
+                            res.sendStatus(202);
+                        }
+                    })
+                } else {
+                    res.status(404).send({
+                        message: "Cannot find specified subject, section, year, and semester."
+                    })
+                }
             }
+            
         })
+        
     }
 }
