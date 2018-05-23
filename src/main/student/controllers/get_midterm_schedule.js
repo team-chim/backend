@@ -25,7 +25,7 @@ module.exports = (req, res) => {
             "message": "Please specify a semester"
         })
     } else {
-        db.query(SQL.FIND_FINAL_SCHEDULE, [studentid, year, semester], (err, results, fields) => {
+        db.query(SQL.FIND_MIDTERM_SCHEDULE, [studentid, year, semester], (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
