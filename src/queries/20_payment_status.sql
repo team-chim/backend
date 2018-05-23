@@ -1,3 +1,7 @@
-SELECT s.`Year`, s.Semester, p.PaymentStatus
-FROM (semester s, student stdn) NATURAL LEFT JOIN payment p
-WHERE stdn.StudentID = ?
+SELECT DISTINCT t1.`StudentID`, t1.`Year`, t1.`Semester`, t1.`PaymentStatus`
+FROM (
+    SELECT `StudentID`, `Year`, `Semester`, `PaymentStatus`
+    FROM studies sd 
+    NATURAL JOIN payment p
+) AS t1 
+WHERE t1.studentID = ?;
