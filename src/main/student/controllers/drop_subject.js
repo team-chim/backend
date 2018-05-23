@@ -24,12 +24,22 @@ module.exports = (req, res) => {
             "message": "Please specify the section's number"
         })
     } else {
-        db.query("UPDATE studies SET Grade = 'W' WHERE studies.StudentID = ? AND studies.SubjectID = ? AND studies.Year = ? AND studies.Semester = ? AND studies.SectionNo = ?", params, (err, results, fields) => {
+        db.query("DELETE FROM studies WHERE studies.StudentID = ? AND studies.SubjectID = ? AND studies.Year = ? AND studies.Semester = ? AND studies.SectionNo = ?", params, (err, results, fields) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
+            } else if (results.affectedRows > 0) {
+                res.status(204).send({
+                    affectedRows: results.affectedRows,
+                    message: results.message,
+                    parameters: params
+                });
             } else {
-                res.sendStatus(202);
+                res.status(404).send({
+                    affectedRows: results.affectedRows,
+                    message: results.message,
+                    parameters: params
+                });
             }
         })
     }
