@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+// Search
+router.get('/search', require('../controllers/search_subjects'));
+
 /* Subjects */
 router.get('/', require('../controllers/get_subjects'));
 router.put('/', require('../controllers/put_new_subject'));
